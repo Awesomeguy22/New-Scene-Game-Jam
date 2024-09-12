@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "New Scene Game Jam.sln"
+    "dotnet.defaultSolution": "New-Scene-Game-Jam.sln"
 }
