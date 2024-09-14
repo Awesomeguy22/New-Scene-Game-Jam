@@ -15,11 +15,12 @@ public class ProjectileAttack : MonoBehaviour
     private int projectileDamege;
 
     private void Awake() {
+        this.controlsManager = FindAnyObjectByType<ControlsManager>();
     }
 
     private void OnEnable() {
-        this.controlsManager = ControlsManager.Singleton;
-        ControlsManager.Singleton.ShootProjectile += When_OnShootProjectile;
+        // this.controlsManager = ControlsManager.Singleton;
+        this.controlsManager.ShootProjectile += When_OnShootProjectile;
     }
 
 
