@@ -23,7 +23,9 @@ public class Projectile : MonoBehaviour
     public void Setup(Vector2 direction) {
         this.rigidbody = this.GetComponent<Rigidbody2D>();
 
-        this.rigidbody.velocity = direction * 1;
+        this.rigidbody.velocity = direction * 10;
+
+        Destroy(gameObject, 5);
     }
 
     private void OnCollisionEnter(Collision collision) {

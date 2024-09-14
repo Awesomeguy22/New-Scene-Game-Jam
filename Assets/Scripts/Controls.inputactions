@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "New action1",
-                    "type": "Button",
-                    "id": "d8184837-576b-4985-bd40-7a7eddaf8ed0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -38,12 +29,12 @@
                 },
                 {
                     "name": "",
-                    "id": "39189e37-44b1-4a70-ac7c-3d1aad235efc",
-                    "path": "",
+                    "id": "309d7402-27da-4e2d-8c95-fbffd4bda40c",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action1",
+                    "action": "ShootProjectile",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
