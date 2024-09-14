@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &832367168836666352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6145930497179767684}
+  m_Layer: 0
+  m_Name: Chains
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6145930497179767684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832367168836666352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.010136623, y: 0.17247137, z: -2.989688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4145367017364262982}
+  - {fileID: 3186890677735731696}
+  - {fileID: 7510869725675694826}
+  - {fileID: 8512296876923871966}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3148197914338940443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6145930497179767684}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9498634
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2024714
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5396879
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.37060153
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.48295608
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6293985
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4829756
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -194.478
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 74.498
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -93.966
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_Name
+      value: New Game Jam - 2D Chain Revised (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+--- !u!4 &3186890677735731696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+  m_PrefabInstance: {fileID: 3148197914338940443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4471498473440769965
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6145930497179767684}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0601366
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.8224714
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4196879
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.48297668
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6293999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.48295435
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3706001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -165.522
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 74.498
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -86.03299
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+      propertyPath: m_Name
+      value: New Game Jam - 2D Chain Revised
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+--- !u!4 &4145367017364262982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
+  m_PrefabInstance: {fileID: 4471498473440769965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8048285777448127745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6145930497179767684}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9601367
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7424712
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.3396878
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.07945903
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.103552625
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6035547
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.78656524
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_Name
+      value: New Game Jam - Shackle Only For Chain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+--- !u!4 &7510869725675694826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+  m_PrefabInstance: {fileID: 8048285777448127745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8190774031063680309
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6145930497179767684}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15000002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15000002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5001366
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6524713
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0396879
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.22759438
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.3266402
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5179843
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.75709933
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 140.532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 251.10501
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 62.221
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+      propertyPath: m_Name
+      value: New Game Jam - Shackle Only For Chain (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+--- !u!4 &8512296876923871966 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 266792e927fbe0345a4a4ca8616f1523, type: 3}
+  m_PrefabInstance: {fileID: 8190774031063680309}
+  m_PrefabAsset: {fileID: 0}

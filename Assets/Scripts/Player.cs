@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ManageHealthBar();
+        if (slider != Null){
+            ManageHealthBar();
+        }
+
     }
 
     void ManageHealthBar(){
