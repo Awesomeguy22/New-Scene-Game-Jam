@@ -14,12 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] int winStage = 5;
     [SerializeField] Scene winScreen;
 
-    [SerializeField] int[] ExpThresholds = {};
+    [SerializeField] int[] expThresholds = {};
 
-
+    [SerializeField] GameObject[] chains;
+    [SerializeField] Player player;
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -30,8 +31,11 @@ public class GameManager : MonoBehaviour
 
 
     public void CheckGamePhase(float playerXP) {
-        if (playerXP > ExpThresholds[currentGameStage - 1]) {
+        if (playerXP > expThresholds[currentGameStage - 1]) {
             currentGameStage += 1;
+            player.playerHealth = player.maxHealth;
+            //Break Chain
+            BreakChain(currentGameStage - 1);
         }
 
         if (currentGameStage == winStage){
@@ -39,7 +43,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    void BreakChain(int i){
+        
+    }
     public void RestartGame() {
         Debug.Log("You Lost, Restarting Current Scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
