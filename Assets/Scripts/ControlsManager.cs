@@ -6,7 +6,7 @@ using System;
 
 public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
 {
-    public static ControlsManager Singleton;
+    // public static ControlsManager Singleton;
     public Controls controls;
     
     public event EventHandler ShootProjectile;
@@ -25,7 +25,7 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
         controls = new Controls();
         controls.Keyboard.SetCallbacks(this);
 
-        MakeSingleton();
+        // MakeSingleton();
     }
     void Start()
     {
@@ -38,15 +38,15 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
         
     }
 
-    private void MakeSingleton() {
-        if (Singleton != null) {
-            Destroy(gameObject); 
-        } else {
-            Singleton = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("Made singleton");
-        }
-    }
+    // private void MakeSingleton() {
+    //     if (Singleton != null) {
+    //         Destroy(gameObject); 
+    //     } else {
+    //         Singleton = this;
+    //         DontDestroyOnLoad(gameObject);
+    //         Debug.Log("Made singleton");
+    //     }
+    // }
 
     // public static ControlsManager GetSingleton() {
     //     if (Singleton == null) {
