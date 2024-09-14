@@ -10,10 +10,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed;
     GameObject player;
 
+    [SerializeField]
+    private int initialHealth;
+    private int health;
+
     // Start is called before the first frame update
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        health = initialHealth;
     }
 
 
@@ -26,5 +31,13 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate() {
         //transform.position += transform.forward * moveSpeed;
+    }
+
+    public void DecreaseHealth(int amount) {
+        health -= amount; 
+
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
     }
 }

@@ -10,6 +10,10 @@ public class ProjectileAttack : MonoBehaviour
     private Projectile projectile;
     private ControlsManager controlsManager;
 
+
+    [SerializeField]
+    private int projectileDamege;
+
     private void Awake() {
     }
 
@@ -37,7 +41,7 @@ public class ProjectileAttack : MonoBehaviour
 
 
         Projectile projectileInstance = Instantiate(projectile, instantiateCoordinates, Quaternion.identity);
-        projectileInstance.Setup(shootingVector);
+        projectileInstance.Setup(shootingVector, this.projectileDamege);
     }
 
     private void When_OnShootProjectile(object sender, EventArgs e) {
