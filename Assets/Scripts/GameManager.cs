@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int playerHealth;
 
-    private int playerXP = 0;
-    [SerializeField] int[] ExpThresholds = {};
     
     //int from 1-4 representing the phase of the game
     //Used by spawner and attack logic
@@ -16,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] int winStage = 5;
     [SerializeField] Scene winScreen;
+
+    [SerializeField] int[] ExpThresholds = {};
+
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void CheckGamePhase() {
+    public void CheckGamePhase(float playerXP) {
         if (playerXP > ExpThresholds[currentGameStage - 1]) {
             currentGameStage += 1;
         }
@@ -39,28 +39,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CheckDeath() {
 
-        if (playerHealth < 0){
-            RestartGame();
-        }
-    }
-
-    void RestartGame() {
-        Debug.Log("You Lost");
+    public void RestartGame() {
+        Debug.Log("You Lost, Restarting Current Scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void Win(){
+    public void Win(){
         SceneManager.LoadScene(winScreen.name);
     }
-    void DamagePlayer(int damage){
-        playerHealth -= damage;
 
-    }
-
-    void GainXP(int xp) {
-        playerXP += xp;
-        CheckGamePhase();
-    }
 }
