@@ -71,6 +71,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fed0681-6404-47d2-bf98-1e029f239d30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -139,6 +148,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Tentacle4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1a982da-7ab8-4698-9c15-c29a8f628102"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -152,6 +172,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Keyboard_Tentacle2 = m_Keyboard.FindAction("Tentacle2", throwIfNotFound: true);
         m_Keyboard_Tentacle3 = m_Keyboard.FindAction("Tentacle3", throwIfNotFound: true);
         m_Keyboard_Tentacle4 = m_Keyboard.FindAction("Tentacle4", throwIfNotFound: true);
+        m_Keyboard_Pause = m_Keyboard.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -218,6 +239,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Keyboard_Tentacle2;
     private readonly InputAction m_Keyboard_Tentacle3;
     private readonly InputAction m_Keyboard_Tentacle4;
+    private readonly InputAction m_Keyboard_Pause;
     public struct KeyboardActions
     {
         private @Controls m_Wrapper;
@@ -227,6 +249,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Tentacle2 => m_Wrapper.m_Keyboard_Tentacle2;
         public InputAction @Tentacle3 => m_Wrapper.m_Keyboard_Tentacle3;
         public InputAction @Tentacle4 => m_Wrapper.m_Keyboard_Tentacle4;
+        public InputAction @Pause => m_Wrapper.m_Keyboard_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -251,6 +274,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Tentacle4.started += instance.OnTentacle4;
             @Tentacle4.performed += instance.OnTentacle4;
             @Tentacle4.canceled += instance.OnTentacle4;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -270,6 +296,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Tentacle4.started -= instance.OnTentacle4;
             @Tentacle4.performed -= instance.OnTentacle4;
             @Tentacle4.canceled -= instance.OnTentacle4;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -294,5 +323,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnTentacle2(InputAction.CallbackContext context);
         void OnTentacle3(InputAction.CallbackContext context);
         void OnTentacle4(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,12 +9,29 @@ public class GameManager : MonoBehaviour
     //int from 1-4 representing the phase of the game
     //Used by spawner and attack logic
     public int currentGameStage = 1;
+    public bool gamePaused = false;
 
     [SerializeField] int winStage = 5;
     [SerializeField] Scene winScreen;
 
     [SerializeField] int[] ExpThresholds = {};
 
+    private ControlsManager controlsManager;
+
+
+    public event EventHandler Pause;
+
+    private void Awake() {
+        this.controlsManager = FindObjectOfType<ControlsManager>();
+    }
+
+    private void OnEnable() {
+        this.controlsManager.Pause += When_Pause;
+    }
+
+    private void OnDisable() {
+        this.controlsManager.Pause -= When_Pause;
+    }
 
     void Start()
     {
@@ -47,6 +63,18 @@ public class GameManager : MonoBehaviour
 
     public void Win(){
         SceneManager.LoadScene(winScreen.name);
+    }
+
+    public void When_Pause(object sender, EventArgs e) {
+        this.gamePaused = !this.gamePaused;
+
+        if (this.gamePaused) {
+            Time.timeScale = 0;
+        } else {
+            Time.timeScale = 1;
+        }
+
+        this.Pause?.Invoke(this, EventArgs.Empty);
     }
 
 }

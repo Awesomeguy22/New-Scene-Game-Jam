@@ -9,6 +9,7 @@ public class ProjectileAttack : MonoBehaviour
     [SerializeField]
     private Projectile projectile;
     private ControlsManager controlsManager;
+    private GameManager gameManager;
 
     private int currentTentacle = 1;
 
@@ -20,7 +21,8 @@ public class ProjectileAttack : MonoBehaviour
     private int projectileDamege;
 
     private void Awake() {
-        this.controlsManager = FindAnyObjectByType<ControlsManager>();
+        this.controlsManager = FindObjectOfType<ControlsManager>();
+        this.gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable() {
@@ -44,11 +46,17 @@ public class ProjectileAttack : MonoBehaviour
     }
 
     private void When_OnShootProjectile(object sender, EventArgs e) {
+        if (this.gameManager.gamePaused) {
+            return;
+        }
         ShootProjectile(tentacleEnds[currentTentacle - 1]);
     }
 
     // change the current active tentacle
-    private void When_ToggleTentacle(object sender, ControlsManager.ToggleTentacleEventArgs e) {
+    private void When_ToggleTentacle(object sender, ControlsManager.ToggleTentacleEventArgs e) {    
+        if (this.gameManager.gamePaused) {
+            return;
+        }
         this.currentTentacle = e.tentacle;
     }
 }

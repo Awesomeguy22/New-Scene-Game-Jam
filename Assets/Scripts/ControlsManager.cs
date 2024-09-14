@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 using System.Data;
+using UnityEngine.Rendering;
 
 public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
 {
@@ -12,6 +13,7 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     
     public event EventHandler ShootProjectile;
     public event EventHandler<ToggleTentacleEventArgs> ToggleTentacle;
+    public event EventHandler Pause;
 
     public class ToggleTentacleEventArgs: EventArgs {
         public int tentacle;
@@ -90,6 +92,12 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public void OnTentacle4(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
             ToggleTentacle?.Invoke(this, new ToggleTentacleEventArgs { tentacle = 4 });
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Pause?.Invoke(this, EventArgs.Empty);
         }
     }
 }
