@@ -33,7 +33,6 @@ public class ProjectileAttack : MonoBehaviour
 
     }
 
-    // Spawns projectile with specified damage moving from specified point to mouse coordinates
     private void ShootProjectile(Vector2 startingCoordinates) {
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
@@ -45,7 +44,6 @@ public class ProjectileAttack : MonoBehaviour
         projectileInstance.Setup(shootingVector, this.projectileDamege);
     }
 
-    // Event listener for shoot projectile event from controls manager
     private void When_OnShootProjectile(object sender, EventArgs e) {
         Vector2 vector = new Vector2(0, 0);
         ShootProjectile(vector);

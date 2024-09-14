@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy") {
             Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            // enemy.takeDamage(damage);
+            //enemy.DecreaseHealth(damage);
             Destroy(gameObject);
         }
 
