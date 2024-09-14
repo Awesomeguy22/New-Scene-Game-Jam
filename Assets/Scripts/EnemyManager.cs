@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
     //Spawns an enemy wave each time with a certain weight
     
     [SerializeField] GameManager gameManager;
+    [SerializeField] Transform enemies;
     //Placeholder
     [SerializeField] GameObject[] spawnableEnemies;
     [SerializeField] int[] enemyWeights;
@@ -35,20 +36,24 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeTillNextWave <= 0) {
+            SpawnWave();
+            timeTillNextWave = timeBetweenWaves;
+
+        }
     }
 
     void SpawnWave() {
-        timeTillNextWave = timeBetweenWaves;
         int randomStage = Random.Range(1,possibleEnemyWaves[gameManager.currentGameStage].Length);
         int[] wave = possibleEnemyWaves[randomStage];
         for (int i = 0; i < spawnableEnemies.Length; i++){
             int spawnCount = wave[i];
-
+            GameObject enemyToSpawn = spawnableEnemies[i];
             //create a spawncount number of enemy i 
             for (int j = 0; j < spawnCount; j++) {
                 //create enemy i 
-                //Instantiate()
+                Vector3 spawnPos = Random.onUnitSphere ;
+                Instantiate(enemyToSpawn, enemies);
             }
         }
         //enemiesPerWave = {};
