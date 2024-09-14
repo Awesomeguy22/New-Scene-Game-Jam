@@ -41,7 +41,7 @@ public class EnemyManager : MonoBehaviour
         if(!enemies){
             enemies = transform;
         }
-        timeTillNextWave = timeBetweenWaves;
+        timeTillNextWave = 0;
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class EnemyManager : MonoBehaviour
             GameObject enemyToSpawn = wave1[i];
             //create enemy i at spawnpos in global coords
             Vector2 spawnRand = Random.insideUnitCircle.normalized * spawnOffset;
-            float spawnZOffset = Random.Range(-zOffset, zOffset);
+            float spawnZOffset = Random.Range(-zOffset, 0);
             Vector3 spawnPos = player.transform.position + new Vector3(spawnRand.x, spawnRand.y, spawnZOffset);
             Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemies);
             //Debug.Log($"Spawning {enemyToSpawn.name} at position {spawnPos}");
