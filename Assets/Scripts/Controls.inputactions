@@ -6,10 +6,10 @@
             "id": "405f976b-5fde-4690-b583-3d122a32f161",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Value",
+                    "name": "ShootProjectile",
+                    "type": "Button",
                     "id": "0620b802-60bb-4e35-862d-2d1cdc14646f",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -28,11 +28,11 @@
                 {
                     "name": "",
                     "id": "699ff9e0-dbd4-4550-9ea4-f5f7ac7ca791",
-                    "path": "<Mouse>/delta/x",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ShootProjectile",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

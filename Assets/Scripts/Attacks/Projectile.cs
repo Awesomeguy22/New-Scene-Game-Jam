@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     ProjectileAttack attack;
+    private Rigidbody2D rigidbody;
     void Start()
     {
  
@@ -15,6 +18,12 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Setup(Vector2 direction) {
+        this.rigidbody = this.GetComponent<Rigidbody2D>();
+
+        this.rigidbody.velocity = direction * 1;
     }
 
     private void OnCollisionEnter(Collision collision) {

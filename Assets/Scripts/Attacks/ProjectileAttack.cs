@@ -16,15 +16,19 @@ public class ProjectileAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void Shoot(Vector2 startingCoordinates) {
+    private void ShootProjectile(Vector2 startingCoordinates) {
         Vector2 mouseCoordinates = Mouse.current.position.ReadValue();
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
 
-        // Projectile 
-        
+        Projectile projectileInstance = Instantiate(projectile, startingCoordinates, Quaternion.identity);
+        projectileInstance.Setup(shootingVector);
+    }
 
+    public void OnShootProjectile(InputAction.CallbackContext context) {
+        Vector2 vector = new Vector2(0, 0);
+        ShootProjectile(vector);
     }
 }
