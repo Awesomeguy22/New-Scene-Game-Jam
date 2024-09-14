@@ -58,7 +58,8 @@ public class Enemy : MonoBehaviour
     }
 
     void Die(){
-        
+        String name = gameObject.name;
+        Debug.Log($"{name} destroyed!");
         Destroy(gameObject);
     }
 }

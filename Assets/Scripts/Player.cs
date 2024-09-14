@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void DamagePlayer(float damage){
         playerHealth -= damage;
-        Debug.Log($"Player taking Damage! Health is now {playerHealth}");
+        //Debug.Log($"Player taking Damage! Health is now {playerHealth}");
     }
 
     public void GainXP(float xp) {
