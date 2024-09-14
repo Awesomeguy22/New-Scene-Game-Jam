@@ -13,12 +13,17 @@ public class Enemy : MonoBehaviour
     Boolean inRange = false;
     GameObject player;
 
+    [SerializeField]
+    private int initialHealth;
+    private int health;
+
     float attackCooldown = 0.0f;
 
     // Start is called before the first frame update
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        health = initialHealth;
     }
 
 
