@@ -37,7 +37,7 @@ public class ProjectileAttack : MonoBehaviour
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
 
-        Vector3 instantiateCoordinates = new Vector3(startingCoordinates.x, startingCoordinates.y, -6);
+        Vector3 instantiateCoordinates = new Vector3(startingCoordinates.x, startingCoordinates.y, -3);
 
 
         Projectile projectileInstance = Instantiate(projectile, instantiateCoordinates, Quaternion.identity);

@@ -21,23 +21,25 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void Setup(Vector2 direction, int damage) {
         this.rigidbody = this.GetComponent<Rigidbody>();
 
-        this.rigidbody.velocity = direction * 10;
+        this.rigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
         this.damage = damage;
+
 
         Destroy(gameObject, 5);
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnTriggerEnter(Collider collision) {
+        Debug.Log(collision.gameObject.name);
+        
 
         if (collision.gameObject.tag == "Enemy") {
             Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            //enemy.DecreaseHealth(damage);
+            enemy.takeDamage(damage);
             Destroy(gameObject);
         }
 
