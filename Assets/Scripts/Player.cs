@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         if (gameManager == null){
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         }
-        if (!slider){
+        if (slider){
             slider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
         }
     }
