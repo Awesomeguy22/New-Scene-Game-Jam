@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackRange;
 
     [SerializeField] float moveSpeed;
+    [SerializeField] float health;
+    Boolean inRange = false;
     GameObject player;
 
-    [SerializeField]
-    private int initialHealth;
-    private int health;
+    float attackCooldown = 0.0f;
 
     // Start is called before the first frame update
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        health = initialHealth;
     }
 
 
@@ -30,14 +30,15 @@ public class Enemy : MonoBehaviour
     }
 
     void FixedUpdate() {
-        //transform.position += transform.forward * moveSpeed;
+        if (Vector3.Distance(transform.position, player.transform.position) > attackRange) {
+            transform.position += transform.forward * moveSpeed;
+            inRange = false;
+        } else {
+            inRange = true;
+        }
     }
 
-    public void DecreaseHealth(int amount) {
-        health -= amount; 
-
-        if (health <= 0) {
-            Destroy(gameObject);
-        }
+    void takeDamage(int damage) {
+        health -= damage;
     }
 }

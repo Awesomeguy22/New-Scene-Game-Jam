@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1444779295265863203}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376200c58371cd8478c012667c3acafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0
-  moveSpeed: 1
-  initialHealth: 0
+  attackRange: 3
+  moveSpeed: 0.01
 --- !u!1 &5821129908630260103
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ GameObject:
   - component: {fileID: 1946157425545728402}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
