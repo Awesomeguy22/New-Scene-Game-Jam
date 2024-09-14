@@ -20,6 +20,7 @@ public class Tentacle : MonoBehaviour
         RotateTentacle();
     }
 
+    // rotate tentacle according to mouse, lerp not working
     private void RotateTentacle() {
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector3 tentacleCoordinates = gameObject.transform.position;
@@ -36,11 +37,12 @@ public class Tentacle : MonoBehaviour
         Quaternion pointingAngle = Quaternion.Euler(0, 0, angle);
 
         Quaternion currentAngle = Quaternion.Euler(0, 0, transform.rotation.z);
-        gameObject.transform.rotation = Quaternion.Lerp(currentAngle, pointingAngle, Time.deltaTime);
-        // transform.rotation = Quaternion.Euler(0, 0, angle);
-        Debug.Log("Pointing: " + pointingAngle.eulerAngles + " Current: " + currentAngle.eulerAngles + " lerp: " + transform.rotation.eulerAngles);
+        // gameObject.transform.rotation = Quaternion.Lerp(currentAngle, pointingAngle, Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        // Debug.Log("Pointing: " + pointingAngle.eulerAngles + " Current: " + currentAngle.eulerAngles + " lerp: " + transform.rotation.eulerAngles);
     }
 
+    // calculate angle in degrees from vector 2
     private float Vector2Deg(Vector2 vector) {
         float angle = Mathf.Atan(vector.y / vector.x) * Mathf.Rad2Deg;
 

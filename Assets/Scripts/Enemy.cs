@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private int initialHealth;
-    private int health;
 
     float attackCooldown = 0.0f;
 
