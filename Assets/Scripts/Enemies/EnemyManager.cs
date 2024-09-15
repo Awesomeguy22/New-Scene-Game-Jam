@@ -67,7 +67,7 @@ public class EnemyManager : MonoBehaviour
                     break;
 
             }
-            timeTillNextWave = timeBetweenWaves;
+            timeTillNextWave = timeBetweenWaves + Random.Range(0,1.0f);
 
         }
         timeTillNextWave -= Time.deltaTime;
