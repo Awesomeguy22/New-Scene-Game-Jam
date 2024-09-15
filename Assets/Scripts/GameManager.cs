@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour
     }
 
     void BreakChain(int i){
-        
+        chains[i].SetActive(false);
+        audioManager.PlayAudioClip(AudioManager.ClipName.chainBreak);
     }
 
     public void StartGame() {

@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
         bgm,
         intro,
         projectileHit,
+
+        chainBreak,
     }
 
     private void Awake() {
