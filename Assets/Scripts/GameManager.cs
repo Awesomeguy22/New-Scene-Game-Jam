@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame() {
         Debug.Log("You Lost, Restarting Current Scene");
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
