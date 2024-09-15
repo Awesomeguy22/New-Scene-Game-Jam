@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         while (isDead && transform.position.y < 8) {
             enemyRenderer.material.color = new Color(1, 0, 0);
             //renderer2.material.color = new Color(1, 0, 0);
-            transform.eulerAngles = new Vector3(0, 90, 180);
+            transform.rotation = transform.rotation * Quaternion.Euler(180, 0, 0);
             transform.position += new Vector3(0, floatSpeed, 0);
             yield return new WaitForSeconds(0.01f);
         }
