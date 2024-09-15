@@ -12,11 +12,12 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public Controls controls;
     
     public event EventHandler ShootProjectile;
-    public event EventHandler<ToggleTentacleEventArgs> ToggleTentacle;
+    public event EventHandler<ToggleAttackEventArgs> ToggleAttack;
     public event EventHandler Pause;
+    public event EventHandler Attack;
 
-    public class ToggleTentacleEventArgs: EventArgs {
-        public int tentacle;
+    public class ToggleAttackEventArgs: EventArgs {
+        public int attack;
     }
 
     private void OnEnable(){
@@ -71,33 +72,39 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
         }
     }
 
-    public void OnTentacle1(InputAction.CallbackContext context) {
+    public void OnAttack1(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
-            ToggleTentacle?.Invoke(this, new ToggleTentacleEventArgs { tentacle = 1 });
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 1 });
         }
     }
 
-    public void OnTentacle2(InputAction.CallbackContext context) {
+    public void OnAttack2(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
-            ToggleTentacle?.Invoke(this, new ToggleTentacleEventArgs { tentacle = 2 });
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 2 });
         }
     }
 
-    public void OnTentacle3(InputAction.CallbackContext context) {
+    public void OnAttack3(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
-            ToggleTentacle?.Invoke(this, new ToggleTentacleEventArgs { tentacle = 3 });
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 3 });
         }
     }
 
-    public void OnTentacle4(InputAction.CallbackContext context) {
+    public void OnAttack4(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
-            ToggleTentacle?.Invoke(this, new ToggleTentacleEventArgs { tentacle = 4 });
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 4 });
         }
     }
 
     public void OnPause(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
             Pause?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Attack?.Invoke(this, EventArgs.Empty);        
         }
     }
 }

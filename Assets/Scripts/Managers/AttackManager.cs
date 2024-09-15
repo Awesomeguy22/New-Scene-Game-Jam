@@ -1,34 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
     [SerializeField] BaseAttack[] attacks;
-    int activeAttack;
 
-    GameManager gameManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    private GameManager gameManager;
+    private ControlsManager controlsManager;
+
+
+    private int currentAttackMode;
+
+    private void Awake() {
+        this.controlsManager = FindObjectOfType<ControlsManager>();
+        this.gameManager = FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //attack 1
-        if (Input.GetButtonDown("Q")){
-            activeAttack = 0;
-        }
-        else if (Input.GetButtonDown("W")){
-            activeAttack = 1;
-        }
-        else if (Input.GetButtonDown("E")){
-            activeAttack = 2;
-        }
-        else if (Input.GetButtonDown("R")){
-            activeAttack = 3;
-        }
+    private void OnEnable() {
+        this.controlsManager.ToggleAttack += When_ToggleAttack;
+        this.controlsManager.Attack += When_Attack;
+    }
+
+    private void OnDisable() {
+        this.controlsManager.ToggleAttack -= When_ToggleAttack;
+        this.controlsManager.Attack -= When_Attack;
+    }
+
+    private void When_ToggleAttack(object sender, ControlsManager.ToggleAttackEventArgs e) {
+        this.currentAttackMode = e.attack - 1;
+    }
+
+    private void When_Attack(object sender, EventArgs e) {
+        this.attacks[this.currentAttackMode].Attack();
     }
 }
