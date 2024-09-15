@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class TentacleAttack : BaseAttack
 {
     [SerializeField] GameObject TentacleGraphics;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class TentacleAttack : BaseAttack
         }
 
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        
+
 
     }
 }

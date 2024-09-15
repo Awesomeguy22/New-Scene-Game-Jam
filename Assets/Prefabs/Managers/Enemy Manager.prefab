@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: {fileID: 0}
-  spawnableEnemies:
-  - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
-  enemyWeights: 
   wave1:
   - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
   - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
@@ -64,8 +61,8 @@ MonoBehaviour:
   - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
   - {fileID: 3482553328475965279, guid: f29494099385d1142a4bf651e12ee7c6, type: 3}
   - {fileID: 3482553328475965279, guid: f29494099385d1142a4bf651e12ee7c6, type: 3}
-  spawnOffset: 7
-  zOffset: 1
+  spawnOffsetDistance: 10
+  zOffsetDistance: 2
   timeBetweenWaves: 10
   timeTillNextWave: 0
   waveWeights: 0

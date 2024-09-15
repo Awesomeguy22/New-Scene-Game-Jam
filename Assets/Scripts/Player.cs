@@ -8,12 +8,15 @@ public class Player : MonoBehaviour
 {
     GameManager gameManager;
     public float maxHealth = 100.0f;
+    
     public float playerHealth;
     public float playerXP = 0;
 
     [SerializeField] Slider slider;
 
+    [SerializeField] HeadWiggle headWiggle;
     [SerializeField] GameObject[] tentacles;
+
 
     private bool showDebug = false;
 
@@ -31,6 +34,7 @@ public class Player : MonoBehaviour
                 slider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
             }
         }
+
     }
 
     // Update is called once per frame
@@ -39,9 +43,15 @@ public class Player : MonoBehaviour
         if (slider){
             ManageHealthBar();
         }
-
+        if (headWiggle){
+            ManageWiggle();
+        }
     }
 
+    void ManageWiggle(){
+        float healthPercent = Mathf.InverseLerp(0,maxHealth, playerHealth);
+        headWiggle.amplitude = Mathf.Lerp(headWiggle.baseAmplitude, headWiggle.maxAmplitude, healthPercent);
+    }
     void ManageHealthBar(){
         slider.value = Mathf.InverseLerp(0,maxHealth, playerHealth);
     }

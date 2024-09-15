@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lazerBeams:
   - {fileID: 6803428564241987935}
-  attackRange: 2
+  attackRange: 4
   moveSpeed: 1
   floatSpeed: 0.02
   health: 1

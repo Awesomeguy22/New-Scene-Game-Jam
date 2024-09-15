@@ -7,7 +7,10 @@ public class HeadWiggle : MonoBehaviour
 {
 
     [SerializeField] GameObject head;
-    [SerializeField] float amplitude = 5;
+    public float baseAmplitude = 5;
+    public float maxAmplitude = 30;
+
+    public float amplitude = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,6 @@ public class HeadWiggle : MonoBehaviour
     {
         //Debug.Log(Time.time);
         //Debug.Log(amplitude * ((float)  Math.Sin(Time.time)));
-        head.transform.rotation *= Quaternion.Euler(0, 0 , amplitude * Time.deltaTime * ((float)  Mathf.Cos(Time.time)));
+        head.transform.rotation = Quaternion.Euler(head.transform.rotation.x, head.transform.rotation.y , amplitude * ((float)  Mathf.Sin(Time.time)));
     }
 }
