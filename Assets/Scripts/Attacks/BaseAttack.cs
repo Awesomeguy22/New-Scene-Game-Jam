@@ -6,6 +6,8 @@ public class BaseAttack : MonoBehaviour
     private float damage;
     [SerializeField]
     private float cooldown;
+    [SerializeField]
+    public bool attackEnabled;
 
     private float cooldownCounting;
 
@@ -26,5 +28,6 @@ public class BaseAttack : MonoBehaviour
         cooldownCounting = cooldown;
         return false;
     }
+
 
 }

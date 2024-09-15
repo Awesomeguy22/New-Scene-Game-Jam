@@ -12,6 +12,11 @@ public class AttackManager : MonoBehaviour
     private GameManager gameManager;
     private ControlsManager controlsManager;
 
+    public event EventHandler<ChangeAttackEventArgs> ChangeAttack;
+
+    public class ChangeAttackEventArgs: EventArgs {
+        public int attack;
+    }
 
     private int currentAttackMode;
 
@@ -31,7 +36,12 @@ public class AttackManager : MonoBehaviour
     }
 
     private void When_ToggleAttack(object sender, ControlsManager.ToggleAttackEventArgs e) {
+        if (!this.attacks[e.attack - 1].attackEnabled) {
+            return;
+        }
+        
         this.currentAttackMode = e.attack - 1;
+        this.ChangeAttack?.Invoke(this, new ChangeAttackEventArgs { attack = e.attack });
     }
 
     private void When_Attack(object sender, EventArgs e) {

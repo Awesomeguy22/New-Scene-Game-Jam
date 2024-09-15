@@ -24,8 +24,8 @@ public class ProjectileAttack : BaseAttack
     private float explosionSize;
     [SerializeField]
     private float explosionTimer;
-    [SerializeField]
-    private float tentacleDistance;
+    // [SerializeField]
+    private float tentacleDistance = 3.5f;
     // private ControlsManager controlsManager;
     // private GameManager gameManager;
 
