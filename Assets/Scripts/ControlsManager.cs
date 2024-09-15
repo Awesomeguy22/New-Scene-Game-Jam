@@ -114,4 +114,8 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
             Continue?.Invoke(this, EventArgs.Empty);        
         }
     }
+
+    public void OnContinueClick() {
+        Continue?.Invoke(this, EventArgs.Empty);
+    }
 }
