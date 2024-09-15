@@ -1,25 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class BaseAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public int damage;
-    void Start()
-    {
-        
+    [SerializeField]
+    private float damage;
+    [SerializeField]
+    private float cooldown;
+
+    private float cooldownCounting;
+
+    private void Update() {
+        if (cooldownCounting > 0) {
+            cooldownCounting -= Time.deltaTime;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public virtual void Attack() {}
+    
+
+    protected bool CheckCooldown() {
+        if (cooldownCounting > 0) {
+            return true;
+        }
+
+        cooldownCounting = cooldown;
+        return false;
     }
 
-    void HitEnemy() {
+    protected void DamageEnemy(GameObject enemy) {
+        Enemy enemyScript = enemy.GetComponentInParent<Enemy>();
 
+        enemyScript.takeDamage(damage);
     }
 }
-

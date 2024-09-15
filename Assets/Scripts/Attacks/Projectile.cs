@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class Projectile : MonoBehaviour
     ProjectileAttack attack;
     private Rigidbody rigidbody;
 
-    private int damage;
+    private float damage;
 
     private bool showDebug = false;
 
@@ -33,8 +34,7 @@ public class Projectile : MonoBehaviour
         }
         
         if (collision.gameObject.tag == "Enemy") {
-            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            enemy.takeDamage(damage);
+            collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
             Destroy(gameObject);
         }
     }

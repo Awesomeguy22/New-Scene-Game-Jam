@@ -37,7 +37,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Tentacle1"",
+                    ""name"": ""Attack1"",
                     ""type"": ""Button"",
                     ""id"": ""84e1940a-9886-42dd-845a-2de02cfd5cef"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Tentacle2"",
+                    ""name"": ""Attack2"",
                     ""type"": ""Button"",
                     ""id"": ""ee82bc00-e9ea-4369-ba94-87d3f02cca5e"",
                     ""expectedControlType"": ""Button"",
@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Tentacle3"",
+                    ""name"": ""Attack3"",
                     ""type"": ""Button"",
                     ""id"": ""f4171419-cb82-4f00-a47f-f5b88ffd31ef"",
                     ""expectedControlType"": ""Button"",
@@ -64,7 +64,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Tentacle4"",
+                    ""name"": ""Attack4"",
                     ""type"": ""Button"",
                     ""id"": ""36150358-87f3-4ff3-b861-d843db582000"",
                     ""expectedControlType"": ""Button"",
@@ -76,6 +76,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""7fed0681-6404-47d2-bf98-1e029f239d30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""eba36a56-00d7-4aba-a1f5-23cf111b3b4c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -112,7 +121,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Tentacle1"",
+                    ""action"": ""Attack1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -123,7 +132,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Tentacle2"",
+                    ""action"": ""Attack2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -134,7 +143,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Tentacle3"",
+                    ""action"": ""Attack3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -145,7 +154,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Tentacle4"",
+                    ""action"": ""Attack4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -159,6 +168,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18951a8c-b76f-440f-8b38-ca680c3986bf"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -168,11 +188,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Keyboard
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_ShootProjectile = m_Keyboard.FindAction("ShootProjectile", throwIfNotFound: true);
-        m_Keyboard_Tentacle1 = m_Keyboard.FindAction("Tentacle1", throwIfNotFound: true);
-        m_Keyboard_Tentacle2 = m_Keyboard.FindAction("Tentacle2", throwIfNotFound: true);
-        m_Keyboard_Tentacle3 = m_Keyboard.FindAction("Tentacle3", throwIfNotFound: true);
-        m_Keyboard_Tentacle4 = m_Keyboard.FindAction("Tentacle4", throwIfNotFound: true);
+        m_Keyboard_Attack1 = m_Keyboard.FindAction("Attack1", throwIfNotFound: true);
+        m_Keyboard_Attack2 = m_Keyboard.FindAction("Attack2", throwIfNotFound: true);
+        m_Keyboard_Attack3 = m_Keyboard.FindAction("Attack3", throwIfNotFound: true);
+        m_Keyboard_Attack4 = m_Keyboard.FindAction("Attack4", throwIfNotFound: true);
         m_Keyboard_Pause = m_Keyboard.FindAction("Pause", throwIfNotFound: true);
+        m_Keyboard_Attack = m_Keyboard.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,21 +256,23 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Keyboard;
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_ShootProjectile;
-    private readonly InputAction m_Keyboard_Tentacle1;
-    private readonly InputAction m_Keyboard_Tentacle2;
-    private readonly InputAction m_Keyboard_Tentacle3;
-    private readonly InputAction m_Keyboard_Tentacle4;
+    private readonly InputAction m_Keyboard_Attack1;
+    private readonly InputAction m_Keyboard_Attack2;
+    private readonly InputAction m_Keyboard_Attack3;
+    private readonly InputAction m_Keyboard_Attack4;
     private readonly InputAction m_Keyboard_Pause;
+    private readonly InputAction m_Keyboard_Attack;
     public struct KeyboardActions
     {
         private @Controls m_Wrapper;
         public KeyboardActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ShootProjectile => m_Wrapper.m_Keyboard_ShootProjectile;
-        public InputAction @Tentacle1 => m_Wrapper.m_Keyboard_Tentacle1;
-        public InputAction @Tentacle2 => m_Wrapper.m_Keyboard_Tentacle2;
-        public InputAction @Tentacle3 => m_Wrapper.m_Keyboard_Tentacle3;
-        public InputAction @Tentacle4 => m_Wrapper.m_Keyboard_Tentacle4;
+        public InputAction @Attack1 => m_Wrapper.m_Keyboard_Attack1;
+        public InputAction @Attack2 => m_Wrapper.m_Keyboard_Attack2;
+        public InputAction @Attack3 => m_Wrapper.m_Keyboard_Attack3;
+        public InputAction @Attack4 => m_Wrapper.m_Keyboard_Attack4;
         public InputAction @Pause => m_Wrapper.m_Keyboard_Pause;
+        public InputAction @Attack => m_Wrapper.m_Keyboard_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -262,21 +285,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started += instance.OnShootProjectile;
             @ShootProjectile.performed += instance.OnShootProjectile;
             @ShootProjectile.canceled += instance.OnShootProjectile;
-            @Tentacle1.started += instance.OnTentacle1;
-            @Tentacle1.performed += instance.OnTentacle1;
-            @Tentacle1.canceled += instance.OnTentacle1;
-            @Tentacle2.started += instance.OnTentacle2;
-            @Tentacle2.performed += instance.OnTentacle2;
-            @Tentacle2.canceled += instance.OnTentacle2;
-            @Tentacle3.started += instance.OnTentacle3;
-            @Tentacle3.performed += instance.OnTentacle3;
-            @Tentacle3.canceled += instance.OnTentacle3;
-            @Tentacle4.started += instance.OnTentacle4;
-            @Tentacle4.performed += instance.OnTentacle4;
-            @Tentacle4.canceled += instance.OnTentacle4;
+            @Attack1.started += instance.OnAttack1;
+            @Attack1.performed += instance.OnAttack1;
+            @Attack1.canceled += instance.OnAttack1;
+            @Attack2.started += instance.OnAttack2;
+            @Attack2.performed += instance.OnAttack2;
+            @Attack2.canceled += instance.OnAttack2;
+            @Attack3.started += instance.OnAttack3;
+            @Attack3.performed += instance.OnAttack3;
+            @Attack3.canceled += instance.OnAttack3;
+            @Attack4.started += instance.OnAttack4;
+            @Attack4.performed += instance.OnAttack4;
+            @Attack4.canceled += instance.OnAttack4;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -284,21 +310,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started -= instance.OnShootProjectile;
             @ShootProjectile.performed -= instance.OnShootProjectile;
             @ShootProjectile.canceled -= instance.OnShootProjectile;
-            @Tentacle1.started -= instance.OnTentacle1;
-            @Tentacle1.performed -= instance.OnTentacle1;
-            @Tentacle1.canceled -= instance.OnTentacle1;
-            @Tentacle2.started -= instance.OnTentacle2;
-            @Tentacle2.performed -= instance.OnTentacle2;
-            @Tentacle2.canceled -= instance.OnTentacle2;
-            @Tentacle3.started -= instance.OnTentacle3;
-            @Tentacle3.performed -= instance.OnTentacle3;
-            @Tentacle3.canceled -= instance.OnTentacle3;
-            @Tentacle4.started -= instance.OnTentacle4;
-            @Tentacle4.performed -= instance.OnTentacle4;
-            @Tentacle4.canceled -= instance.OnTentacle4;
+            @Attack1.started -= instance.OnAttack1;
+            @Attack1.performed -= instance.OnAttack1;
+            @Attack1.canceled -= instance.OnAttack1;
+            @Attack2.started -= instance.OnAttack2;
+            @Attack2.performed -= instance.OnAttack2;
+            @Attack2.canceled -= instance.OnAttack2;
+            @Attack3.started -= instance.OnAttack3;
+            @Attack3.performed -= instance.OnAttack3;
+            @Attack3.canceled -= instance.OnAttack3;
+            @Attack4.started -= instance.OnAttack4;
+            @Attack4.performed -= instance.OnAttack4;
+            @Attack4.canceled -= instance.OnAttack4;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -319,10 +348,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IKeyboardActions
     {
         void OnShootProjectile(InputAction.CallbackContext context);
-        void OnTentacle1(InputAction.CallbackContext context);
-        void OnTentacle2(InputAction.CallbackContext context);
-        void OnTentacle3(InputAction.CallbackContext context);
-        void OnTentacle4(InputAction.CallbackContext context);
+        void OnAttack1(InputAction.CallbackContext context);
+        void OnAttack2(InputAction.CallbackContext context);
+        void OnAttack3(InputAction.CallbackContext context);
+        void OnAttack4(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }
