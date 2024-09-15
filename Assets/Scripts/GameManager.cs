@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int[] expThresholds = {};
 
     [SerializeField] GameObject[] chains;
+
     [SerializeField] Player player;    
     
     private ControlsManager controlsManager;
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame() {
         Debug.Log("You Lost, Restarting Current Scene");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

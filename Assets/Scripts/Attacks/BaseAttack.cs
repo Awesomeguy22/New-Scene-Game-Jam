@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class BaseAttack : MonoBehaviour
 {
-    [SerializeField]
-    private float damage;
+    //[SerializeField] private float damage;
     [SerializeField]
     private float cooldown;
     [SerializeField]
     public bool attackEnabled;
 
-    private float cooldownCounting;
+    [SerializeField] float cooldownCounting;
 
     private void Update() {
         if (cooldownCounting > 0) {
