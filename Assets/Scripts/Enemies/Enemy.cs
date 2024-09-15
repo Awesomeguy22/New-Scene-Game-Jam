@@ -11,7 +11,11 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] float moveSpeed;
     [SerializeField] float health = 50;
+    
+    [SerializeField] float xp = 10;
     private float cooldown = 1.0f;
+
+
 
     [SerializeField] float dps;
     Boolean inRange = false;
@@ -111,6 +115,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Die(){
+        playerScript.GainXP(xp);
         isDead = true;
     }
 }
