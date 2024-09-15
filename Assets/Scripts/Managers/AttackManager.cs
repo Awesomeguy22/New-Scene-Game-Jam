@@ -35,6 +35,9 @@ public class AttackManager : MonoBehaviour
     }
 
     private void When_Attack(object sender, EventArgs e) {
+        if (this.gameManager.gamePaused) {
+            return;
+        }
         this.attacks[this.currentAttackMode].Attack();
     }
 }

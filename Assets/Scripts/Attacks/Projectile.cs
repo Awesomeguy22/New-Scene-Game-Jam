@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     ProjectileAttack attack;
     private Rigidbody rigidbody;
+    private AudioManager audioManager;
 
     private float damage;
 
@@ -19,6 +20,7 @@ public class Projectile : MonoBehaviour
     // setup the velocity, duration and damage of the projectile 
     public void Setup(Vector2 direction, int damage) {
         this.rigidbody = this.GetComponent<Rigidbody>();
+        this.audioManager = FindObjectOfType<AudioManager>();
 
         this.rigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
         this.damage = damage;
@@ -35,6 +37,7 @@ public class Projectile : MonoBehaviour
         
         if (collision.gameObject.tag == "Enemy") {
             collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
+            audioManager.PlayAudioClip(AudioManager.ClipName.projectileHit);
             Destroy(gameObject);
         }
     }
