@@ -1092,12 +1092,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 6
+  cooldown: 5
   attackEnabled: 0
   cooldownCounting: 0
   projectile: {fileID: 3195682615542615416, guid: b60f2daf867d8114b9a2a248451449f1, type: 3}
   explosion: {fileID: 6657445395478311956, guid: 510d6cecb4195b643bb0734492ab1d89, type: 3}
-  projectileDamege: 5
+  projectileDamege: 8
   attackName: 
   type: 1
   explosionSize: 1

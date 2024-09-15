@@ -9,16 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/Cutscene.unity
     guid: 2c079691e4c098449bfc5464f6b9483a
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: eb9a08bb88dca4c4c9d2acd293a92203
+    path: Assets/Scenes/Final Scenes/Main Level Scene.unity
+    guid: d3a8a4546d643c44e90a3466628f7aaf
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Win Scene.unity
     guid: 7df1b66e74fb1944bbb1fba63f9c65a9
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Lose Scene.unity
     guid: 2ebac06bbcf68fb4c9cb5cddbe8f1b10
-  - enabled: 1
-    path: Assets/Scenes/Final Scenes/Main Level Scene.unity
-    guid: d3a8a4546d643c44e90a3466628f7aaf
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f1be330193a4f448c9ae0e3ac628bba0, type: 2}

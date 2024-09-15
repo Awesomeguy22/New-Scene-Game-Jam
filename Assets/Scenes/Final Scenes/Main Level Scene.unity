@@ -5767,7 +5767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: brokenChains.Array.data[0]
@@ -5783,15 +5783,15 @@ PrefabInstance:
       objectReference: {fileID: 1315845469}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[0]
-      value: 10
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[1]
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[2]
-      value: 40
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[3]
