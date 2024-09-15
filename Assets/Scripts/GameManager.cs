@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     private ControlsManager controlsManager;
     private AudioManager audioManager;
 
+    [SerializeField]
+    public EnemyManager enemyManager;
 
     public event EventHandler Pause;
     public event EventHandler<ChainBreakEventArgs> ChainBreak;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
     }
 
     // Update is called once per frame
@@ -128,6 +131,14 @@ public class GameManager : MonoBehaviour
         this.Pause?.Invoke(this, EventArgs.Empty);
     }
 
+    public void ExitGame()
+    {
+        this.gamePaused = true;
+        currentGameStage = 1;
+        player.playerHealth = player.maxHealth;
+        player.playerXP = 0;
+        Time.timeScale = 0;
 
-
+        enemyManager.Reset();
+    }
 }

@@ -4682,6 +4682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5478209875934453994, guid: eccf6cf780fde144bb32bf07d0fe9f56, type: 3}
+      propertyPath: m_TagString
+      value: EnemyManager
+      objectReference: {fileID: 0}
     - target: {fileID: 7609472925202341407, guid: eccf6cf780fde144bb32bf07d0fe9f56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5752,6 +5756,18 @@ PrefabInstance:
     - target: {fileID: 6444725669303391959, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
+      propertyPath: enemyManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
+      propertyPath: pauseOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
+      propertyPath: expThresholds.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: brokenChains.Array.data[0]
