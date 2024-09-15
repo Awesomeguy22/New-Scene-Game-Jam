@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4970270892606854596}
   - component: {fileID: 6775401246816285680}
-  - component: {fileID: 4923543486816692300}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -58,27 +57,6 @@ MonoBehaviour:
   - {fileID: 7081580243307411945}
   - {fileID: 6953011563959168887}
   player: {fileID: 0}
---- !u!114 &4923543486816692300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3867631253879132321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bd2be041c278e408358fd255597ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: {fileID: 0}
-  wave1: []
-  wave2: []
-  wave3: []
-  spawnOffsetDistance: 0
-  zOffsetDistance: 0
-  timeBetweenWaves: 10
-  timeTillNextWave: 0
-  waveWeights: 0
 --- !u!1001 &6821653468823130036
 PrefabInstance:
   m_ObjectHideFlags: 0

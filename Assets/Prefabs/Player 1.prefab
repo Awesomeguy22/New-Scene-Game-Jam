@@ -895,7 +895,7 @@ MonoBehaviour:
   cooldown: 0
   attackEnabled: 0
   cooldownCounting: 0
-  projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
+  projectile: {fileID: 3195682615542615416, guid: b60f2daf867d8114b9a2a248451449f1, type: 3}
   explosion: {fileID: 6657445395478311956, guid: 510d6cecb4195b643bb0734492ab1d89, type: 3}
   projectileDamege: 0
   attackName: 
