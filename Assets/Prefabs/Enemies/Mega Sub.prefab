@@ -311,7 +311,7 @@ MonoBehaviour:
   - {fileID: 1726021602953820206}
   - {fileID: 7471666638854426428}
   - {fileID: 4593004165623485635}
-  attackRange: 2
+  attackRange: 4
   moveSpeed: 0.5
   floatSpeed: 0.02
   health: 6

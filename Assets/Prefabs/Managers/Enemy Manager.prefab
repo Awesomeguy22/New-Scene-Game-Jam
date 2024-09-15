@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 3482553328475965279, guid: f29494099385d1142a4bf651e12ee7c6, type: 3}
   - {fileID: 3482553328475965279, guid: f29494099385d1142a4bf651e12ee7c6, type: 3}
   spawnOffset: 7
-  zOffset: 0
+  zOffset: 1
   timeBetweenWaves: 10
   timeTillNextWave: 0
   waveWeights: 0

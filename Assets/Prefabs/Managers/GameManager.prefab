@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameStage: 1
   gamePaused: 0
+  pauseOnStart: 0
   winStage: 5
   winScreen:
     m_Handle: 0
@@ -66,11 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: {fileID: 0}
-  spawnableEnemies: []
-  enemyWeights: 
   wave1: []
-  spawnOffset: 0
-  zOffset: 0
+  wave2: []
+  wave3: []
+  spawnOffsetDistance: 0
+  zOffsetDistance: 0
   timeBetweenWaves: 10
   timeTillNextWave: 0
   waveWeights: 0

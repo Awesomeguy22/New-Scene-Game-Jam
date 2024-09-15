@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float xp = 10;
 
     //take damage cooldown
-    private float cooldown = 1.0f;
+    //private float cooldown = 1.0f;
 
     [SerializeField] Renderer enemyRenderer;
     [SerializeField] Collider[] enemyColiders;

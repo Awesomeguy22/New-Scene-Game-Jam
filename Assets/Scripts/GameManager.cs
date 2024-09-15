@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int currentGameStage = 1;
     public bool gamePaused = true;
 
+    [SerializeField] bool pauseOnStart = false;
+
     [SerializeField] int winStage = 4;
     [SerializeField] Scene winScreen;
 
@@ -28,8 +30,10 @@ public class GameManager : MonoBehaviour
     private void Awake() {
         this.controlsManager = FindObjectOfType<ControlsManager>();
         this.audioManager = FindObjectOfType<AudioManager>();
+        if (pauseOnStart) {
 
         Time.timeScale = 0;
+        }
     }
 
     private void OnEnable() {
@@ -70,12 +74,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame() {
+
         this.gamePaused = false;
         Time.timeScale = 1;
 
         this.audioManager.PlayBGM(AudioManager.ClipName.bgm);
+            this.Pause?.Invoke(this, EventArgs.Empty);
 
-        this.Pause?.Invoke(this, EventArgs.Empty);
     }
     public void RestartGame() {
         Debug.Log("You Lost, Restarting Current Scene");

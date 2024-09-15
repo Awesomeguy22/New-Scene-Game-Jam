@@ -12,8 +12,8 @@ public class EnemyManager : MonoBehaviour
     GameObject player;
     [SerializeField] Transform enemies;
     //Placeholder
-    [SerializeField] GameObject[] spawnableEnemies;
-    [SerializeField] int[] enemyWeights;
+    //[SerializeField] GameObject[] spawnableEnemies;
+    //[SerializeField] int[] enemyWeights;
 
     //for each difficulty level, a list of enemy waves to spawn
     //[SerializeField] int[][] possibleEnemyWaves;
@@ -22,8 +22,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] GameObject[] wave2;
     [SerializeField] GameObject[] wave3;
 
-    [SerializeField] float spawnOffset;
-    [SerializeField] float zOffset;
+    [SerializeField] float spawnOffsetDistance;
+    [SerializeField] float zOffsetDistance;
     [SerializeField] float timeBetweenWaves = 10;
     [SerializeField] float timeTillNextWave;
 
@@ -94,8 +94,8 @@ public class EnemyManager : MonoBehaviour
 
             GameObject enemyToSpawn = wave[i];
             //create enemy i at spawnpos in global coords
-            Vector2 spawnRand = Random.insideUnitCircle.normalized * spawnOffset;
-            float spawnZOffset = Random.Range(-zOffset, 0);
+            Vector2 spawnRand = Random.insideUnitCircle.normalized * spawnOffsetDistance;
+            float spawnZOffset = Random.Range(-zOffsetDistance, 0);
             Vector3 spawnPos = player.transform.position + new Vector3(spawnRand.x, spawnRand.y, spawnZOffset);
             Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemies);
 

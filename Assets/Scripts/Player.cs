@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] Slider slider;
 
+    [SerializeField] GameObject[] tentacles;
+
     private bool showDebug = false;
 
     // Start is called before the first frame update
