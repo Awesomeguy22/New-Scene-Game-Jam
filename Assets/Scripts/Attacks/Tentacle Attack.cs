@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 
 public class TentacleAttack : BaseAttack
 {
-    [SerializeField] GameObject TentacleGraphics;
 
-    
+    [SerializeField] GameObject spinningTentacle;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +25,7 @@ public class TentacleAttack : BaseAttack
         }
 
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-
+        Instantiate(spinningTentacle, new Vector3(mouseCoordinates.x, mouseCoordinates.y, 0), Quaternion.identity);
 
     }
 }
