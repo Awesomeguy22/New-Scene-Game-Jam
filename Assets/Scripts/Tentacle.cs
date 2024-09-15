@@ -1,22 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Tentacle : MonoBehaviour
-{
-    // Start is called before the first frame update
+public class Tentacle : MonoBehaviour {
 
-    
-    void Start()
-    {
+    [SerializeField]
+    private int tentacleIndex;
 
+    private AttackManager attackManager;
+    private int currentTentacle;
+
+    private void Awake() {
+        this.attackManager = FindObjectOfType<AttackManager>();
+
+        this.currentTentacle = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void OnEnable() {
+        this.attackManager.ChangeAttack += When_ChangeAttack;
+    }
+
+    private void OnDisable() {
+        this.attackManager.ChangeAttack -= When_ChangeAttack;
+    }
+
+    void Update() {
+        if (this.currentTentacle != this.tentacleIndex) {
+            return;
+        }
+
         RotateTentacle();
     }
 
@@ -43,7 +58,7 @@ public class Tentacle : MonoBehaviour
     }
 
     // calculate angle in degrees from vector 2
-    private float Vector2Deg(Vector2 vector) {
+    public static float Vector2Deg(Vector2 vector) {
         float angle = Mathf.Atan(vector.y / vector.x) * Mathf.Rad2Deg;
 
         if (vector.x < 0 && vector.y > 0) {
@@ -55,5 +70,10 @@ public class Tentacle : MonoBehaviour
         }
 
         return angle;
+    }
+
+    private void When_ChangeAttack(object sender, AttackManager.ChangeAttackEventArgs e) {
+        this.currentTentacle = e.attack; 
+        Debug.Log(this.currentTentacle);
     }
 }
