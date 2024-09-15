@@ -9,7 +9,7 @@ public class SpinningTentacle : MonoBehaviour
     //[SerializeField] GameObject TentacleGraphics;
 
     public float spinSpeed = 10;
-    public float lifetime = 1.0f;
+    //public float lifetime = 1.0f;
 
     public float damage = 1.0f; 
 
@@ -17,7 +17,7 @@ public class SpinningTentacle : MonoBehaviour
     void Awake()
     {
         this.audioManager = FindObjectOfType<AudioManager>();
-        Destroy(gameObject, lifetime);
+        
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class SpinningTentacle : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collision) {
-        Debug.Log($"Collided with {collision.gameObject.name}");
         if (collision.gameObject.tag != "Enemy") {
             return;
         }
