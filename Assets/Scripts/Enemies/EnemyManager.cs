@@ -50,6 +50,12 @@ public class EnemyManager : MonoBehaviour
         timeTillNextWave = 0;
     }
 
+    public void Reset() {
+        for (int i = 0; i < enemies.childCount; i++) {
+            Destroy(enemies.GetChild(i).gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

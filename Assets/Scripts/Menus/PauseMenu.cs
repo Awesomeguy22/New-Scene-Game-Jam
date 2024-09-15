@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Exit() {
+        this.gameManager.ExitGame();
         this.startMenu.SetActive(true);               
         this.pauseMenu.SetActive(false);
     }

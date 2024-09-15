@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Projectile
   - Health Bar
+  - EnemyManager
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - Projectile
   - Player
-  - 
+  - EnemyManager
   - 
   - 
   - 
