@@ -87,7 +87,10 @@ public class GameManager : MonoBehaviour
         }
         
         chains[i - 1].SetActive(false);
-        brokenChains[i - 1].SetActive(true);
+        if (brokenChains[i - 1]){
+            brokenChains[i - 1].SetActive(true);
+        }
+        
         audioManager.PlayAudioClip(AudioManager.ClipName.chainBreak);
         this.ChainBreak?.Invoke(this, new ChainBreakEventArgs { tentacle = i + 1 });
     }
