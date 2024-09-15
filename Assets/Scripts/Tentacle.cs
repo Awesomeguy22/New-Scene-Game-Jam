@@ -11,10 +11,12 @@ public class Tentacle : MonoBehaviour {
     private int tentacleIndex;
 
     private AttackManager attackManager;
+    private GameManager gameManager;
     private int currentTentacle;
 
     private void Awake() {
         this.attackManager = FindObjectOfType<AttackManager>();
+        this.gameManager = FindObjectOfType<GameManager>();
 
         this.currentTentacle = 1;
     }
@@ -28,6 +30,10 @@ public class Tentacle : MonoBehaviour {
     }
 
     void Update() {
+        if (this.gameManager.gamePaused) {
+            return;
+        }
+
         if (this.currentTentacle != this.tentacleIndex) {
             return;
         }

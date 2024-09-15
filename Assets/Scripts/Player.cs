@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    GameManager gameManager;
+    private GameManager gameManager;
     public float maxHealth = 100.0f;
     
     public float playerHealth;
@@ -18,9 +18,21 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject[] tentacles;
 
 
-    private bool showDebug = false;
 
-    // Start is called before the first frame update
+    private bool showDebug = false;
+    
+    private void Awake() {
+        this.gameManager = FindObjectOfType<GameManager>();
+    }
+
+    private void OnEnable() {
+        this.gameManager.ChainBreak += When_ChainBreak;
+    }
+
+    private void OnDisable() {
+        this.gameManager.ChainBreak -= When_ChainBreak;
+    }
+
     void Start()
     {
         playerHealth = maxHealth;
@@ -74,5 +86,9 @@ public class Player : MonoBehaviour
         if (playerHealth < 0){
             gameManager.RestartGame();
         }
+    }
+
+    private void When_ChainBreak(object sender, GameManager.ChainBreakEventArgs e) {
+        this.tentacles[e.tentacle - 1].SetActive(true);
     }
 }

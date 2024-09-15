@@ -28,11 +28,13 @@ public class AttackManager : MonoBehaviour
     private void OnEnable() {
         this.controlsManager.ToggleAttack += When_ToggleAttack;
         this.controlsManager.Attack += When_Attack;
+        this.gameManager.ChainBreak += When_ChainBreak;
     }
 
     private void OnDisable() {
         this.controlsManager.ToggleAttack -= When_ToggleAttack;
         this.controlsManager.Attack -= When_Attack;
+        this.gameManager.ChainBreak -= When_ChainBreak;
     }
 
     private void When_ToggleAttack(object sender, ControlsManager.ToggleAttackEventArgs e) {
@@ -49,5 +51,9 @@ public class AttackManager : MonoBehaviour
             return;
         }
         this.attacks[this.currentAttackMode].Attack();
+    }
+
+    private void When_ChainBreak(object sender, GameManager.ChainBreakEventArgs e) {
+        this.attacks[e.tentacle - 1].attackEnabled = true;
     }
 }
