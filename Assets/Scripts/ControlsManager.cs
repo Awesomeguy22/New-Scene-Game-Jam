@@ -16,6 +16,7 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public event EventHandler Pause;
     public event EventHandler Attack;
 
+    public event EventHandler Continue;
     public class ToggleAttackEventArgs: EventArgs {
         public int attack;
     }
@@ -105,6 +106,12 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public void OnAttack(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
             Attack?.Invoke(this, EventArgs.Empty);        
+        }
+    }
+
+    public void OnContinue(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Continue?.Invoke(this, EventArgs.Empty);        
         }
     }
 }

@@ -148,6 +148,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: eba36a56-00d7-4aba-a1f5-23cf111b3b4c
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: df7d52cc-5c94-49f0-bb47-5f3106c9e36a
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: Keyboard/Attack[/Mouse/press]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Keyboard/Continue[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203906314301263062, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
+      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8533528799656386737, guid: 4bd103b7442fee14ea73355dccd588c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

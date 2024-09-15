@@ -89,6 +89,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""df7d52cc-5c94-49f0-bb47-5f3106c9e36a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -179,6 +188,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4386a66e-0bd9-4f38-815b-215b80ccd3cf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,6 +214,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Keyboard_Attack4 = m_Keyboard.FindAction("Attack4", throwIfNotFound: true);
         m_Keyboard_Pause = m_Keyboard.FindAction("Pause", throwIfNotFound: true);
         m_Keyboard_Attack = m_Keyboard.FindAction("Attack", throwIfNotFound: true);
+        m_Keyboard_Continue = m_Keyboard.FindAction("Continue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,6 +283,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Keyboard_Attack4;
     private readonly InputAction m_Keyboard_Pause;
     private readonly InputAction m_Keyboard_Attack;
+    private readonly InputAction m_Keyboard_Continue;
     public struct KeyboardActions
     {
         private @Controls m_Wrapper;
@@ -273,6 +295,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Attack4 => m_Wrapper.m_Keyboard_Attack4;
         public InputAction @Pause => m_Wrapper.m_Keyboard_Pause;
         public InputAction @Attack => m_Wrapper.m_Keyboard_Attack;
+        public InputAction @Continue => m_Wrapper.m_Keyboard_Continue;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -303,6 +326,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -328,6 +354,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -354,5 +383,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAttack4(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
     }
 }
