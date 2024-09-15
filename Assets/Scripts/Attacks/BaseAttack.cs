@@ -27,9 +27,4 @@ public class BaseAttack : MonoBehaviour
         return false;
     }
 
-    protected void DamageEnemy(GameObject enemy) {
-        Enemy enemyScript = enemy.GetComponentInParent<Enemy>();
-
-        enemyScript.takeDamage(damage);
-    }
 }

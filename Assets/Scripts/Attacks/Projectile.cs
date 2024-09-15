@@ -8,22 +8,47 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    ProjectileAttack attack;
+    private Explosion explodingArea;
     private Rigidbody rigidbody;
     private AudioManager audioManager;
 
-    private float damage;
+    private float damage; 
+    private ProjectileType type;
+    private float explosionSize;
+    private float explosionTimer = 1f;
 
     private bool showDebug = false;
 
+    public enum ProjectileType {
+        regular, 
+        explodingImpact,
+        timedExploding,
+    }
+
+    private void Update() {
+
+        if (this.type != ProjectileType.timedExploding) {
+            return;
+        }
+
+        explosionTimer -= Time.deltaTime;
+
+        if (explosionTimer < 0) {
+            Explode();
+            Destroy(this);
+        }
+    }
+
     // setup the velocity, duration and damage of the projectile 
-    public void Setup(Vector2 direction, int damage) {
+    public void Setup(Vector2 direction, int damage, ProjectileType type, Explosion explodingArea = null, float explosionTimer = 0) {
         this.rigidbody = this.GetComponent<Rigidbody>();
         this.audioManager = FindObjectOfType<AudioManager>();
 
         this.rigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
         this.damage = damage;
+        this.type = type;
+        this.explodingArea = explodingArea;
+        this.explosionTimer = explosionTimer;
 
 
         Destroy(gameObject, 5);
@@ -31,14 +56,31 @@ public class Projectile : MonoBehaviour
 
     // projectile collision detect
     private void OnTriggerEnter(Collider collision) {
-        if (showDebug) {
-            Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag != "Enemy") {
+            return;
         }
-        
-        if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
-            audioManager.PlayAudioClip(AudioManager.ClipName.projectileHit);
-            Destroy(gameObject);
+
+        switch (this.type) {
+            case ProjectileType.regular: 
+                collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
+                audioManager.PlayAudioClip(AudioManager.ClipName.projectileHit);
+                break;
+
+            case ProjectileType.explodingImpact:
+                Explode();
+                break;
+
+            case ProjectileType.timedExploding:
+                return;
+            default: break;
         }
+
+        Destroy(gameObject);
+    }
+
+    private void Explode() {
+        Explosion explosion = Instantiate(this.explodingArea, transform.position, Quaternion.identity);
+        explosion.Explode();
+        Destroy(gameObject);
     }
 }

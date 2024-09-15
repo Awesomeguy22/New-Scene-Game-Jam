@@ -11,11 +11,19 @@ public class ProjectileAttack : BaseAttack
     [SerializeField]
     private Projectile projectile;
     [SerializeField]
+    private Explosion explosion;
+    [SerializeField]
     private Vector2 startingCoordinates;
     [SerializeField]
     private int projectileDamege;
     [SerializeField]
     private string attackName;
+    [SerializeField]
+    private Projectile.ProjectileType type;
+    [SerializeField]
+    private float explosionSize;
+    [SerializeField]
+    private float explosionTimer;
     // private ControlsManager controlsManager;
     // private GameManager gameManager;
 
@@ -49,7 +57,7 @@ public class ProjectileAttack : BaseAttack
 
 
         Projectile projectileInstance = Instantiate(projectile, instantiateCoordinates, Quaternion.identity);
-        projectileInstance.Setup(shootingVector, this.projectileDamege);
+        projectileInstance.Setup(shootingVector, this.projectileDamege, this.type, this.explosion, this.explosionTimer);
 
     }
     // function to shoot projectiles, shoots from the starting coordinates to the mouse coordinates
