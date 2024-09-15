@@ -13,16 +13,9 @@ public class Projectile : MonoBehaviour
 
     private int damage;
 
-    void Start()
-    {
- 
-    }
+    private bool showDebug = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    // setup the velocity, duration and damage of the projectile 
     public void Setup(Vector2 direction, int damage) {
         this.rigidbody = this.GetComponent<Rigidbody>();
 
@@ -33,17 +26,16 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
+    // projectile collision detect
     private void OnTriggerEnter(Collider collision) {
-        Debug.Log(collision.gameObject.name);
+        if (showDebug) {
+            Debug.Log(collision.gameObject.name);
+        }
         
-
         if (collision.gameObject.tag == "Enemy") {
             Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
             enemy.takeDamage(damage);
             Destroy(gameObject);
         }
-
-
-
     }
 }

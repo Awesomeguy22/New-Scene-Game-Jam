@@ -25,6 +25,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] float timeTillNextWave;
 
     [SerializeField] int waveWeights;
+
+    private bool showDebug = false;
+
     void Start()
     {
         
@@ -81,7 +84,10 @@ public class EnemyManager : MonoBehaviour
             float spawnZOffset = Random.Range(-zOffset, 0);
             Vector3 spawnPos = player.transform.position + new Vector3(spawnRand.x, spawnRand.y, spawnZOffset);
             Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemies);
-            //Debug.Log($"Spawning {enemyToSpawn.name} at position {spawnPos}");
+
+            if (showDebug) {
+                Debug.Log($"Spawning {enemyToSpawn.name} at position {spawnPos}");
+            }
         }
         //enemiesPerWave = {};
     }

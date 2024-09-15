@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public float playerXP = 0;
 
     [SerializeField] Slider slider;
+
+    private bool showDebug = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +41,10 @@ public class Player : MonoBehaviour
     }
     public void DamagePlayer(float damage){
         playerHealth -= damage;
-        
-        //Debug.Log($"Player taking Damage! Health is now {playerHealth}");
+
+        if (showDebug) {
+            Debug.Log($"Player taking Damage! Health is now {playerHealth}");
+        }
     }
 
     public void GainXP(float xp) {
