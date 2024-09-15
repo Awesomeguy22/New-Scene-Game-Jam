@@ -8,10 +8,10 @@ public class SpinningTentacle : MonoBehaviour
 
     //[SerializeField] GameObject TentacleGraphics;
 
-    [SerializeField] float spinSpeed = 10;
-    [SerializeField] float lifetime = 1.0f;
+    public float spinSpeed = 10;
+    public float lifetime = 1.0f;
 
-    [SerializeField] float damage = 1.0f; 
+    public float damage = 1.0f; 
 
     // Start is called before the first frame update
     void Awake()

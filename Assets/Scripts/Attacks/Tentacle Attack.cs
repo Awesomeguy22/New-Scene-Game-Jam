@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,17 +8,11 @@ public class TentacleAttack : BaseAttack
 {
 
     [SerializeField] GameObject spinningTentacle;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float lifetime;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] float spinSpeed;
+    [SerializeField] float damage;
+
 
     public override void Attack() {
         if (CheckCooldown()) {
@@ -25,7 +20,11 @@ public class TentacleAttack : BaseAttack
         }
 
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Instantiate(spinningTentacle, new Vector3(mouseCoordinates.x, mouseCoordinates.y, 0), Quaternion.identity);
+        GameObject attack = Instantiate(spinningTentacle, new Vector3(mouseCoordinates.x, mouseCoordinates.y, 0), Quaternion.identity);
+        SpinningTentacle attackScript = attack.GetComponent<SpinningTentacle>();
+        attackScript.damage = damage;
+        attackScript.spinSpeed = spinSpeed;
+        Destroy(attack, lifetime);
 
     }
 }
