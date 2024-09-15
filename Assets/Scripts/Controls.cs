@@ -35,6 +35,51 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Tentacle1"",
+                    ""type"": ""Button"",
+                    ""id"": ""84e1940a-9886-42dd-845a-2de02cfd5cef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tentacle2"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee82bc00-e9ea-4369-ba94-87d3f02cca5e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tentacle3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f4171419-cb82-4f00-a47f-f5b88ffd31ef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tentacle4"",
+                    ""type"": ""Button"",
+                    ""id"": ""36150358-87f3-4ff3-b861-d843db582000"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fed0681-6404-47d2-bf98-1e029f239d30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -59,6 +104,61 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""ShootProjectile"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39b52624-7ee8-476f-9cdf-1559a9ed07d7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tentacle1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97f6e591-91ca-411d-b66f-d7dbba852770"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tentacle2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b84881eb-bbbf-43db-b036-d7037b908591"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tentacle3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e99fd67-1584-4a26-9f24-b9835af7a122"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tentacle4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1a982da-7ab8-4698-9c15-c29a8f628102"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -68,6 +168,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Keyboard
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_ShootProjectile = m_Keyboard.FindAction("ShootProjectile", throwIfNotFound: true);
+        m_Keyboard_Tentacle1 = m_Keyboard.FindAction("Tentacle1", throwIfNotFound: true);
+        m_Keyboard_Tentacle2 = m_Keyboard.FindAction("Tentacle2", throwIfNotFound: true);
+        m_Keyboard_Tentacle3 = m_Keyboard.FindAction("Tentacle3", throwIfNotFound: true);
+        m_Keyboard_Tentacle4 = m_Keyboard.FindAction("Tentacle4", throwIfNotFound: true);
+        m_Keyboard_Pause = m_Keyboard.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,11 +235,21 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Keyboard;
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_ShootProjectile;
+    private readonly InputAction m_Keyboard_Tentacle1;
+    private readonly InputAction m_Keyboard_Tentacle2;
+    private readonly InputAction m_Keyboard_Tentacle3;
+    private readonly InputAction m_Keyboard_Tentacle4;
+    private readonly InputAction m_Keyboard_Pause;
     public struct KeyboardActions
     {
         private @Controls m_Wrapper;
         public KeyboardActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ShootProjectile => m_Wrapper.m_Keyboard_ShootProjectile;
+        public InputAction @Tentacle1 => m_Wrapper.m_Keyboard_Tentacle1;
+        public InputAction @Tentacle2 => m_Wrapper.m_Keyboard_Tentacle2;
+        public InputAction @Tentacle3 => m_Wrapper.m_Keyboard_Tentacle3;
+        public InputAction @Tentacle4 => m_Wrapper.m_Keyboard_Tentacle4;
+        public InputAction @Pause => m_Wrapper.m_Keyboard_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -147,6 +262,21 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started += instance.OnShootProjectile;
             @ShootProjectile.performed += instance.OnShootProjectile;
             @ShootProjectile.canceled += instance.OnShootProjectile;
+            @Tentacle1.started += instance.OnTentacle1;
+            @Tentacle1.performed += instance.OnTentacle1;
+            @Tentacle1.canceled += instance.OnTentacle1;
+            @Tentacle2.started += instance.OnTentacle2;
+            @Tentacle2.performed += instance.OnTentacle2;
+            @Tentacle2.canceled += instance.OnTentacle2;
+            @Tentacle3.started += instance.OnTentacle3;
+            @Tentacle3.performed += instance.OnTentacle3;
+            @Tentacle3.canceled += instance.OnTentacle3;
+            @Tentacle4.started += instance.OnTentacle4;
+            @Tentacle4.performed += instance.OnTentacle4;
+            @Tentacle4.canceled += instance.OnTentacle4;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -154,6 +284,21 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started -= instance.OnShootProjectile;
             @ShootProjectile.performed -= instance.OnShootProjectile;
             @ShootProjectile.canceled -= instance.OnShootProjectile;
+            @Tentacle1.started -= instance.OnTentacle1;
+            @Tentacle1.performed -= instance.OnTentacle1;
+            @Tentacle1.canceled -= instance.OnTentacle1;
+            @Tentacle2.started -= instance.OnTentacle2;
+            @Tentacle2.performed -= instance.OnTentacle2;
+            @Tentacle2.canceled -= instance.OnTentacle2;
+            @Tentacle3.started -= instance.OnTentacle3;
+            @Tentacle3.performed -= instance.OnTentacle3;
+            @Tentacle3.canceled -= instance.OnTentacle3;
+            @Tentacle4.started -= instance.OnTentacle4;
+            @Tentacle4.performed -= instance.OnTentacle4;
+            @Tentacle4.canceled -= instance.OnTentacle4;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -174,5 +319,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IKeyboardActions
     {
         void OnShootProjectile(InputAction.CallbackContext context);
+        void OnTentacle1(InputAction.CallbackContext context);
+        void OnTentacle2(InputAction.CallbackContext context);
+        void OnTentacle3(InputAction.CallbackContext context);
+        void OnTentacle4(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
