@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641275, b: 0.5748176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1242,10 +1242,6 @@ PrefabInstance:
     - target: {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
       propertyPath: m_Name
       value: Submarine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597895625517912066, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6803428564241987935, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
       propertyPath: m_IsActive
@@ -5000,6 +4996,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7527368131938923120, guid: e8751dfcf984d40179c71fe2b4d37bf9, type: 3}
+      propertyPath: volume
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527368131938923120, guid: e8751dfcf984d40179c71fe2b4d37bf9, type: 3}
+      propertyPath: audioFiles.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527368131938923120, guid: e8751dfcf984d40179c71fe2b4d37bf9, type: 3}
+      propertyPath: audioFiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a4a697182c514d438226013c9af1f84, type: 3}
+    - target: {fileID: 7527368131938923120, guid: e8751dfcf984d40179c71fe2b4d37bf9, type: 3}
+      propertyPath: audioFiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ae9050b43e0cb439d74bf30b837a8f, type: 3}
     - target: {fileID: 8689539265227196888, guid: e8751dfcf984d40179c71fe2b4d37bf9, type: 3}
       propertyPath: m_Name
       value: AudioManager
