@@ -1114,11 +1114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dad0b658b17a1d479e5f11c72e5cd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 4
+  cooldown: 3
   attackEnabled: 0
   cooldownCounting: 0
   spinningTentacle: {fileID: 5148773017981895494, guid: 8784ff34fe960b6409046c42a79d3082, type: 3}
-  lifetime: 0.5
+  lifetime: 1
   spinSpeed: 20
   damage: 0.5
 --- !u!1 &8757049918435536558

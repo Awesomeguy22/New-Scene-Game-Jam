@@ -829,6 +829,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 218436252207922754, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: cooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 787085317811620332, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_Name
       value: Tentacle Indicator 2
@@ -948,6 +952,14 @@ PrefabInstance:
     - target: {fileID: 8727113643360918967, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951769722329604402, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951769722329604402, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: projectileDamege
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9065193986423788255, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_Materials.Array.data[3]
@@ -4677,6 +4689,10 @@ PrefabInstance:
     - target: {fileID: 698744470839368932, guid: eccf6cf780fde144bb32bf07d0fe9f56, type: 3}
       propertyPath: zOffset
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698744470839368932, guid: eccf6cf780fde144bb32bf07d0fe9f56, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5478209875934453994, guid: eccf6cf780fde144bb32bf07d0fe9f56, type: 3}
       propertyPath: m_Name
