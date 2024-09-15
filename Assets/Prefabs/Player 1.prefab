@@ -543,7 +543,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4050551735400314440}
   - component: {fileID: 3035108755196832772}
+  - component: {fileID: 3217077927130673415}
   - component: {fileID: 218436252207922754}
+  - component: {fileID: 8951769722329604402}
+  - component: {fileID: 5509077500009606092}
+  - component: {fileID: 1162836694272671034}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -583,7 +587,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28906c1b133eee94d99389c6f91f8e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   playerHealth: 100
+  playerXP: 0
+  slider: {fileID: 0}
+--- !u!114 &3217077927130673415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727113643360918967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96b0c68098aae345810f0e5eeacc1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacks:
+  - {fileID: 218436252207922754}
+  - {fileID: 8951769722329604402}
+  - {fileID: 5509077500009606092}
+  - {fileID: 1162836694272671034}
 --- !u!114 &218436252207922754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,5 +620,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  cooldown: 1
   projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
+  startingCoordinates: {x: 0, y: 0}
   projectileDamege: 1
+  attackName: 
+--- !u!114 &8951769722329604402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727113643360918967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0.5
+  cooldown: 0
+  projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
+  startingCoordinates: {x: 0, y: 0}
+  projectileDamege: 0
+  attackName: 
+--- !u!114 &5509077500009606092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727113643360918967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  cooldown: 2
+  projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
+  startingCoordinates: {x: 0, y: 0}
+  projectileDamege: 0
+  attackName: 
+--- !u!114 &1162836694272671034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727113643360918967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  cooldown: 2
+  projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
+  startingCoordinates: {x: 0, y: 0}
+  projectileDamege: 0
+  attackName: 
