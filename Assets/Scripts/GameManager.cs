@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     }
 
     void BreakChain(int i){
-        if (i > 3) {
+        if (i >= 3) {
             return;
         }
         

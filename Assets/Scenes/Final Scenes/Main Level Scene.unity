@@ -805,9 +805,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 218436252207922754, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 787085317811620332, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 895495345770225604, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: damage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 895495345770225604, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: cooldown
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1162836694272671034, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: type
@@ -823,23 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2524387730988223730, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-      propertyPath: tentacles.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-      propertyPath: tentacles.Array.data[0]
-      value: 
-      objectReference: {fileID: 223628508}
-    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-      propertyPath: tentacles.Array.data[1]
-      value: 
-      objectReference: {fileID: 223628507}
-    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-      propertyPath: tentacles.Array.data[2]
-      value: 
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: tentacles.Array.data[3]
@@ -937,6 +933,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8951769722329604402, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: cooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951769722329604402, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: projectileDamege
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9065193986423788255, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
@@ -952,16 +956,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
---- !u!1 &223628507 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 787085317811620332, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-  m_PrefabInstance: {fileID: 223628504}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &223628508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2524387730988223730, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
-  m_PrefabInstance: {fileID: 223628504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &245553465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,7 +5066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3867631253879132321, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3978643997989959101, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: m_IsActive
@@ -5148,19 +5142,19 @@ PrefabInstance:
       objectReference: {fileID: 1315845469}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[0]
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[1]
-      value: 20
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[2]
-      value: 30
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6775401246816285680, guid: ef5f880409501b548ba00837fb32d751, type: 3}
       propertyPath: expThresholds.Array.data[3]
-      value: 50
+      value: 700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

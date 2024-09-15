@@ -1041,7 +1041,7 @@ MonoBehaviour:
   tentacles:
   - {fileID: 2524387730988223730}
   - {fileID: 787085317811620332}
-  - {fileID: 7252784349831896279}
+  - {fileID: 190998026998074818}
 --- !u!114 &3217077927130673415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,6 +1388,11 @@ PrefabInstance:
       addedObject: {fileID: 6376369031710871196}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d015f9356743b4995614088590ca84, type: 3}
+--- !u!1 &190998026998074818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3517570684934674871, guid: 06d015f9356743b4995614088590ca84, type: 3}
+  m_PrefabInstance: {fileID: 3636204074977629301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2636529218275231164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1648512136716308937, guid: 06d015f9356743b4995614088590ca84, type: 3}
@@ -1646,10 +1651,5 @@ PrefabInstance:
 --- !u!4 &4798385407861494953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1648512136716308937, guid: 06d015f9356743b4995614088590ca84, type: 3}
-  m_PrefabInstance: {fileID: 6086609497078744416}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7252784349831896279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3517570684934674871, guid: 06d015f9356743b4995614088590ca84, type: 3}
   m_PrefabInstance: {fileID: 6086609497078744416}
   m_PrefabAsset: {fileID: 0}
