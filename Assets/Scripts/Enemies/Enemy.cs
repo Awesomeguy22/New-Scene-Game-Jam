@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //move towards player until in range
-    [SerializeField] GameObject lazerBeam;
+    [SerializeField] GameObject[] lazerBeams;
     [SerializeField] float attackRange;
 
     [SerializeField] float moveSpeed;
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         while (isDead && transform.position.y < 8) {
             enemyRenderer.material.color = new Color(1, 0, 0);
             //renderer2.material.color = new Color(1, 0, 0);
-            transform.rotation = transform.rotation * Quaternion.Euler(180, 0, 0);
+           
             transform.position += new Vector3(0, floatSpeed, 0);
             yield return new WaitForSeconds(0.01f);
         }
@@ -64,30 +64,48 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (isDead) {
-            lazerBeam.SetActive(false);
+            SetLazerBeams(false);
             return;
         }
 
         if (inRange){
-            lazerBeam.SetActive(true);
+            SetLazerBeams(true);
             playerScript.DamagePlayer(dps * Time.deltaTime);
         }
         else {
-            lazerBeam.SetActive(false);
+            SetLazerBeams(false);
             //cooldown -= Time.deltaTime;
         }
     }
 
+    void SetLazerBeams(bool active){
+        for (int i = 0; i < lazerBeams.Length; i++){
+            lazerBeams[i].SetActive(active);
+
+        }
+
+    }
     void FixedUpdate() {
         if (isDead) {
             return;
         }
         transform.LookAt(player.transform);
 
-        lazerBeam.transform.parent.transform.localScale = new Vector3(1, 1, Vector3.Distance(transform.position, player.transform.position) / 2);
 
+        //What is this?
+        for (int i = 0; i < lazerBeams.Length; i++){
+            lazerBeams[i].transform.parent.transform.localScale = new Vector3(1, 1, Vector3.Distance(transform.position, player.transform.position) / 2);
+        }        
+        /*
         if (Vector3.Distance(transform.position, player.transform.position) > Math.Max(3.0f, attackRange * health) - 0.2f) {
             transform.position += transform.forward * (moveSpeed * health * UnityEngine.Random.Range(0.9f, 2.0f));
+            inRange = false;
+        } else {
+            inRange = true;
+        }
+        */
+        if (Vector3.Distance(transform.position, player.transform.position) > attackRange) {
+            transform.position += transform.forward * moveSpeed / 50;
             inRange = false;
         } else {
             inRange = true;
@@ -126,6 +144,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < enemyColiders.Length; i++){
             enemyColiders[i].enabled = false;
         }
+        transform.rotation = transform.rotation * Quaternion.Euler(180, 0, 0);
         playerScript.GainXP(xp);
         isDead = true;
     }

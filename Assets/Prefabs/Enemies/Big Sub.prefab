@@ -132,9 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376200c58371cd8478c012667c3acafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lazerBeam: {fileID: 8875065574891477979}
+  lazerBeams:
+  - {fileID: 8875065574891477979}
   attackRange: 2
-  moveSpeed: 0.02
+  moveSpeed: 0.75
+  floatSpeed: 0.02
   health: 3
   xp: 20
   enemyRenderer: {fileID: 2926647698593392603}
@@ -321,7 +323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1581914164672453709
 Transform:
   m_ObjectHideFlags: 0

@@ -48,9 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376200c58371cd8478c012667c3acafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lazerBeam: {fileID: 6803428564241987935}
+  lazerBeams:
+  - {fileID: 6803428564241987935}
   attackRange: 3
-  moveSpeed: 0.02
+  moveSpeed: 1
+  floatSpeed: 0.02
   health: 1
   xp: 10
   enemyRenderer: {fileID: 0}
@@ -360,7 +362,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: d54e2b0b19235ab4a992e19b790917e1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b6db6839c92ca498ff4dcee9082b3f, type: 2}
+      objectReference: {fileID: 2100000, guid: eeeb32817d8c39d4fb3a0049a784784e, type: 2}
     - target: {fileID: 919132149155446097, guid: d54e2b0b19235ab4a992e19b790917e1, type: 3}
       propertyPath: m_Name
       value: submarine
