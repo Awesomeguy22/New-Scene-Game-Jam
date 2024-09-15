@@ -188,11 +188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameStage: 1
   gamePaused: 0
-  pauseOnStart: 0
-  winStage: 5
-  winScreen:
-    m_Handle: 0
-  expThresholds: 0a0000001e0000003200000064000000
+  pauseOnStart: 1
+  winStage: 4
+  winScreenName: Win Scene
+  loseScreenName: Lose Scene
+  expThresholds: 640000002c010000bc020000
   chains:
   - {fileID: 7056927849470086281}
   - {fileID: 7081580243307411945}

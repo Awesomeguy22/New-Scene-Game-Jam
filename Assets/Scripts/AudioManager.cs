@@ -32,6 +32,8 @@ public class AudioManager : MonoBehaviour
         projectileHit,
 
         chainBreak,
+
+        swish,
     }
 
     private void Awake() {

@@ -32,9 +32,9 @@ public class SpinningTentacle : MonoBehaviour
             return;
         }
 
-
+    
         collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
-        audioManager.PlayAudioClip(AudioManager.ClipName.projectileHit);
+        audioManager.PlayAudioClip(AudioManager.ClipName.swish);
  
 
     }

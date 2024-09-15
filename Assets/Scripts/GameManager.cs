@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int winStage = 4;
     [SerializeField] String winScreenName;
 
+    [SerializeField] String loseScreenName;
+
     [SerializeField] int[] expThresholds = {};
 
     [SerializeField] GameObject[] chains;
@@ -105,9 +107,9 @@ public class GameManager : MonoBehaviour
 
     }
     public void RestartGame() {
-        Debug.Log("You Lost, Restarting Current Scene");
+        Debug.Log("You Lost, Lose Scene");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(loseScreenName);
     }
 
     public void Win(){
