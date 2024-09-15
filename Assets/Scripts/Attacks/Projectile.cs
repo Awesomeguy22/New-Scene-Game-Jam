@@ -9,7 +9,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Explosion explodingArea;
-    private Rigidbody rigidbody;
+    private Rigidbody projRigidbody;
     private AudioManager audioManager;
 
     private float damage; 
@@ -41,10 +41,10 @@ public class Projectile : MonoBehaviour
 
     // setup the velocity, duration and damage of the projectile 
     public void Setup(Vector2 direction, int damage, ProjectileType type, Explosion explodingArea = null, float explosionTimer = 0) {
-        this.rigidbody = this.GetComponent<Rigidbody>();
+        this.projRigidbody = this.GetComponent<Rigidbody>();
         this.audioManager = FindObjectOfType<AudioManager>();
-
-        this.rigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
+        this.transform.LookAt(new Vector3(direction.x, direction.y, 0));
+        this.projRigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
         this.damage = damage;
         this.type = type;
         this.explodingArea = explodingArea;
