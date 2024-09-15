@@ -710,7 +710,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 186061474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2125497022}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &186443200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02cb5d505fc5640be8075e3a621056c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0f58656763c24ae3825e6d64782fc74, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2402,11 +2414,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &841829515 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7134166489811167428, guid: ef5f880409501b548ba00837fb32d751, type: 3}
-  m_PrefabInstance: {fileID: 1800182062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894234007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,11 +2547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894234007}
   m_CullTransparentMesh: 1
---- !u!1 &925657426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2287977963283737185, guid: ef5f880409501b548ba00837fb32d751, type: 3}
-  m_PrefabInstance: {fileID: 1800182062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &927670292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3903,7 +3905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1291101429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2125497022}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1310849739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6251,7 +6265,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1943707474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2125497022}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1943707474
 MonoBehaviour:
   m_ObjectHideFlags: 0

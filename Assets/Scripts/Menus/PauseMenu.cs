@@ -23,16 +23,10 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake() {
         this.gameManager = FindObjectOfType<GameManager>();
-
-        this.resumeButton.onClick.AddListener(() => { Resume(); });
-        this.settingsButton.onClick.AddListener(() => { OpenSettings(); });
-        this.exitButton.onClick.AddListener(() => { Exit(); });
     }
 
     private void OnEnable() {
         this.gameManager.Pause += When_Pause;
-
-
     }
 
     private void OnDisable() {
@@ -55,7 +49,7 @@ public class PauseMenu : MonoBehaviour
         this.settingsMenu.SetActive(true);
     }
 
-    private void Exit() {
+    public void Exit() {
         this.startMenu.SetActive(true);               
         this.pauseMenu.SetActive(false);
     }
