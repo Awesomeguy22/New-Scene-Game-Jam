@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     }
     public void DamagePlayer(float damage){
         playerHealth -= damage;
-
+        CheckDeath();
         if (showDebug) {
             Debug.Log($"Player taking Damage! Health is now {playerHealth}");
         }
@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
 
 
     void CheckDeath() {
-
         if (playerHealth < 0){
             gameManager.RestartGame();
         }
