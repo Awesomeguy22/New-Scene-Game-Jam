@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool pauseOnStart = false;
 
     [SerializeField] int winStage = 4;
-    [SerializeField] Scene winScreen;
+    [SerializeField] String winScreenName;
 
     [SerializeField] int[] expThresholds = {};
 
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Win(){
-        SceneManager.LoadScene(winScreen.name);
+        SceneManager.LoadScene(winScreenName);
     }
 
     public void When_Pause(object sender, EventArgs e) {

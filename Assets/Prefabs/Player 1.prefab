@@ -1070,7 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
+  cooldown: 2
   attackEnabled: 1
   cooldownCounting: 0
   projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
@@ -1092,16 +1092,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e398cbca3b9b74b78ad8436f503d909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 6
   attackEnabled: 0
   cooldownCounting: 0
   projectile: {fileID: 3195682615542615416, guid: b60f2daf867d8114b9a2a248451449f1, type: 3}
   explosion: {fileID: 6657445395478311956, guid: 510d6cecb4195b643bb0734492ab1d89, type: 3}
-  projectileDamege: 0
+  projectileDamege: 5
   attackName: 
-  type: 2
-  explosionSize: 0
-  explosionTimer: 0
+  type: 1
+  explosionSize: 1
+  explosionTimer: 0.1
 --- !u!114 &895495345770225604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,13 +1114,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dad0b658b17a1d479e5f11c72e5cd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 4
   attackEnabled: 0
   cooldownCounting: 0
   spinningTentacle: {fileID: 5148773017981895494, guid: 8784ff34fe960b6409046c42a79d3082, type: 3}
   lifetime: 0.5
   spinSpeed: 20
-  damage: 1
+  damage: 0.5
 --- !u!1 &8757049918435536558
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,7 +58,7 @@ MonoBehaviour:
   enemyRenderer: {fileID: 0}
   enemyColiders:
   - {fileID: 1946157425545728402}
-  dps: 0.5
+  dps: 1
 --- !u!23 &858911349506240760
 MeshRenderer:
   m_ObjectHideFlags: 0
