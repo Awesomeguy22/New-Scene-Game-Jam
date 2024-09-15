@@ -10,12 +10,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackRange;
 
     [SerializeField] float moveSpeed;
+    [SerializeField] float floatSpeed = 0.02f;
     [SerializeField] float health = 50;
     
     [SerializeField] float xp = 10;
+
+    //take damage cooldown
     private float cooldown = 1.0f;
 
-
+    [SerializeField] Renderer enemyRenderer;
+    [SerializeField] Collider[] enemyColiders;
 
     [SerializeField] float dps;
     Boolean inRange = false;
@@ -31,7 +35,10 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<Player>();
-
+        if (!enemyRenderer){
+            //default position for Sub
+            enemyRenderer = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
+        }
         StartCoroutine(Float());
     }
 
@@ -41,13 +48,13 @@ public class Enemy : MonoBehaviour
             transform.position += new Vector3(0, Mathf.Sin(Time.time) * 0.005f, 0);
             yield return new WaitForSeconds(0.01f);
         }
-        Renderer renderer = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
-        Renderer renderer2 = transform.GetChild(1).gameObject.GetComponent<Renderer>();
+        //Renderer renderer = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
+        //Renderer renderer2 = transform.GetChild(1).gameObject.GetComponent<Renderer>();
         while (isDead && transform.position.y < 8) {
-            renderer.material.color = new Color(1, 0, 0);
-            renderer2.material.color = new Color(1, 0, 0);
-            transform.eulerAngles = new Vector3(0, 90, 180);
-            transform.position += new Vector3(0, 0.02f, 0);
+            enemyRenderer.material.color = new Color(1, 0, 0);
+            //renderer2.material.color = new Color(1, 0, 0);
+            transform.rotation = transform.rotation * Quaternion.Euler(180, 0, 0);
+            transform.position += new Vector3(0, floatSpeed, 0);
             yield return new WaitForSeconds(0.01f);
         }
         Destroy(gameObject);
@@ -57,16 +64,17 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (isDead) {
+            lazerBeam.SetActive(false);
             return;
         }
 
-        if (inRange && cooldown <= 0){
+        if (inRange){
             lazerBeam.SetActive(true);
             playerScript.DamagePlayer(dps * Time.deltaTime);
         }
         else {
             lazerBeam.SetActive(false);
-            cooldown -= Time.deltaTime;
+            //cooldown -= Time.deltaTime;
         }
     }
 
@@ -87,7 +95,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void takeDamage(float damage) {
-        cooldown = 1.0f;
+        //cooldown = 1.0f;
 
         // Flash red
         StartCoroutine(FlashRed());
@@ -100,21 +108,24 @@ public class Enemy : MonoBehaviour
     }
 
     IEnumerator FlashRed() {
-        Renderer renderer = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
-        Renderer renderer2 = transform.GetChild(1).gameObject.GetComponent<Renderer>();
-        Color originalColor = renderer.material.color;
-        renderer.material.color = new Color(1, 0, 0);
-        renderer2.material.color = new Color(1, 0, 0);
+        //Renderer renderer = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>();
+        //Renderer renderer2 = transform.GetChild(1).gameObject.GetComponent<Renderer>();
+        Color originalColor = enemyRenderer.material.color;
+        enemyRenderer.material.color = new Color(1, 0, 0);
+        //renderer2.material.color = new Color(1, 0, 0);
 
         // Lerp back to original color
         for (float t = 0.0f; t <= 1.0f; t += 0.1f) {
-            renderer.material.color = Color.Lerp(renderer.material.color, originalColor, t);
-            renderer2.material.color = Color.Lerp(renderer2.material.color, originalColor, t);
+            enemyRenderer.material.color = Color.Lerp(enemyRenderer.material.color, originalColor, t);
+            //renderer2.material.color = Color.Lerp(renderer2.material.color, originalColor, t);
             yield return new WaitForSeconds(0.02f);
         }
     }
 
     void Die(){
+        for (int i = 0; i < enemyColiders.Length; i++){
+            enemyColiders[i].enabled = false;
+        }
         playerScript.GainXP(xp);
         isDead = true;
     }

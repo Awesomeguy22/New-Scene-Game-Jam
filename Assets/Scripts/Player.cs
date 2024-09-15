@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         if (!slider){
             GameObject healthbar = GameObject.FindGameObjectWithTag("Health Bar");
             if (healthbar){
+                //Debug.Log("found health bar");
                 slider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
             }
         }
