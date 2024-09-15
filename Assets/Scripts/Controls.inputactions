@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Tentacle1",
+                    "name": "Attack1",
                     "type": "Button",
                     "id": "84e1940a-9886-42dd-845a-2de02cfd5cef",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Tentacle2",
+                    "name": "Attack2",
                     "type": "Button",
                     "id": "ee82bc00-e9ea-4369-ba94-87d3f02cca5e",
                     "expectedControlType": "Button",
@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Tentacle3",
+                    "name": "Attack3",
                     "type": "Button",
                     "id": "f4171419-cb82-4f00-a47f-f5b88ffd31ef",
                     "expectedControlType": "Button",
@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Tentacle4",
+                    "name": "Attack4",
                     "type": "Button",
                     "id": "36150358-87f3-4ff3-b861-d843db582000",
                     "expectedControlType": "Button",
@@ -54,6 +54,15 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "7fed0681-6404-47d2-bf98-1e029f239d30",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "eba36a56-00d7-4aba-a1f5-23cf111b3b4c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -90,7 +99,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Tentacle1",
+                    "action": "Attack1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -101,7 +110,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Tentacle2",
+                    "action": "Attack2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -112,7 +121,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Tentacle3",
+                    "action": "Attack3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -123,7 +132,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Tentacle4",
+                    "action": "Attack4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -135,6 +144,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18951a8c-b76f-440f-8b38-ca680c3986bf",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
