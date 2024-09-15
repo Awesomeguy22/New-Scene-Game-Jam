@@ -639,7 +639,10 @@ MonoBehaviour:
   playerXP: 0
   slider: {fileID: 0}
   headWiggle: {fileID: 7192852246770492424}
-  tentacles: []
+  tentacles:
+  - {fileID: 2524387730988223730}
+  - {fileID: 787085317811620332}
+  - {fileID: 7252784349831896279}
 --- !u!114 &3217077927130673415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,10 +672,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
+  attackEnabled: 0
   cooldownCounting: 0
   projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
   explosion: {fileID: 0}
-  startingCoordinates: {x: 0, y: 0}
   projectileDamege: 1
   attackName: 
   type: 0
@@ -691,13 +694,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
+  attackEnabled: 0
   cooldownCounting: 0
   projectile: {fileID: 3195682615542615416, guid: 5131de58a2e0841ce92319614e3a2629, type: 3}
-  explosion: {fileID: 0}
-  startingCoordinates: {x: 0, y: 0}
+  explosion: {fileID: 6657445395478311956, guid: 510d6cecb4195b643bb0734492ab1d89, type: 3}
   projectileDamege: 0
   attackName: 
-  type: 0
+  type: 2
   explosionSize: 0
   explosionTimer: 0
 --- !u!114 &895495345770225604
@@ -713,6 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
+  attackEnabled: 0
   cooldownCounting: 0
   spinningTentacle: {fileID: 5148773017981895494, guid: 8784ff34fe960b6409046c42a79d3082, type: 3}
   lifetime: 0.5
@@ -829,6 +833,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7736373169572705493, guid: 06d015f9356743b4995614088590ca84, type: 3}
+      propertyPath: tentacleIndex
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -901,6 +909,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1648512136716308937, guid: 06d015f9356743b4995614088590ca84, type: 3}
   m_PrefabInstance: {fileID: 1430040914569696581}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2524387730988223730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3517570684934674871, guid: 06d015f9356743b4995614088590ca84, type: 3}
+  m_PrefabInstance: {fileID: 1430040914569696581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4196407123142086747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,11 +970,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7736373169572705493, guid: 06d015f9356743b4995614088590ca84, type: 3}
+      propertyPath: tentacleIndex
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d015f9356743b4995614088590ca84, type: 3}
+--- !u!1 &787085317811620332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3517570684934674871, guid: 06d015f9356743b4995614088590ca84, type: 3}
+  m_PrefabInstance: {fileID: 4196407123142086747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3232479550632411538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1648512136716308937, guid: 06d015f9356743b4995614088590ca84, type: 3}
@@ -1023,6 +1045,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7736373169572705493, guid: 06d015f9356743b4995614088590ca84, type: 3}
+      propertyPath: tentacleIndex
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1031,5 +1057,10 @@ PrefabInstance:
 --- !u!4 &4798385407861494953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1648512136716308937, guid: 06d015f9356743b4995614088590ca84, type: 3}
+  m_PrefabInstance: {fileID: 6086609497078744416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7252784349831896279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3517570684934674871, guid: 06d015f9356743b4995614088590ca84, type: 3}
   m_PrefabInstance: {fileID: 6086609497078744416}
   m_PrefabAsset: {fileID: 0}
