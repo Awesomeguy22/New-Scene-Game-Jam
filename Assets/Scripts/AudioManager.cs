@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         this.audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         this.audioSources[0].volume = masterVolume * bgmVolume;
         this.audioSources[1].volume = masterVolume * effectsVolume;
