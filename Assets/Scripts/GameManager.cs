@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int currentGameStage = 1;
     public bool gamePaused = false;
 
-    [SerializeField] int winStage = 5;
+    [SerializeField] int winStage = 4;
     [SerializeField] Scene winScreen;
 
     [SerializeField] int[] expThresholds = {};

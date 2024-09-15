@@ -52,10 +52,20 @@ MonoBehaviour:
   wave1:
   - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
   - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
+  - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
+  wave2:
+  - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
+  - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
+  - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
+  - {fileID: 3230502627503007512, guid: fbc73038c4976cd469213194b4b00df9, type: 3}
+  wave3:
+  - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
+  - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
+  - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
   - {fileID: 2135247913480757393, guid: 87b83fa87e629da46b754521462cdafb, type: 3}
   spawnOffset: 7
   zOffset: 0
-  timeBetweenWaves: 5
+  timeBetweenWaves: 10
   timeTillNextWave: 0
   waveWeights: 0
 --- !u!1 &6077311448614505891

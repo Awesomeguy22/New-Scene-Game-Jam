@@ -18,6 +18,9 @@ public class EnemyManager : MonoBehaviour
     //for each difficulty level, a list of enemy waves to spawn
     //[SerializeField] int[][] possibleEnemyWaves;
     [SerializeField] GameObject[] wave1;
+    
+    [SerializeField] GameObject[] wave2;
+    [SerializeField] GameObject[] wave3;
 
     [SerializeField] float spawnOffset;
     [SerializeField] float zOffset;
@@ -52,14 +55,25 @@ public class EnemyManager : MonoBehaviour
     {
         
         if (timeTillNextWave <= 0) {
-            SpawnWave();
+            switch (gameManager.currentGameStage) {
+                case 1:
+                    SpawnWave(wave1);
+                    break;
+                case 2:
+                    SpawnWave(wave2);
+                    break;
+                case 3:
+                    SpawnWave(wave3);
+                    break;
+
+            }
             timeTillNextWave = timeBetweenWaves;
 
         }
         timeTillNextWave -= Time.deltaTime;
     }
 
-    void SpawnWave() {
+    void SpawnWave(GameObject[] wave) {
         //int randomStage = Random.Range(1,possibleEnemyWaves[gameManager.currentGameStage].Length);
         //int[] wave = possibleEnemyWaves[randomStage];
         /*
@@ -76,9 +90,9 @@ public class EnemyManager : MonoBehaviour
 
             }
         }*/
+        for (int i = 0; i < wave.Length; i++) {
 
-        for (int i = 0; i < wave1.Length; i++) {
-            GameObject enemyToSpawn = wave1[i];
+            GameObject enemyToSpawn = wave[i];
             //create enemy i at spawnpos in global coords
             Vector2 spawnRand = Random.insideUnitCircle.normalized * spawnOffset;
             float spawnZOffset = Random.Range(-zOffset, 0);
