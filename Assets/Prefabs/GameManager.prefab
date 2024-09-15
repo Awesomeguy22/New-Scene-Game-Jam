@@ -45,12 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f59a663749bc14eab214eb17cc678d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
-  ExpThresholds: 
   currentGameStage: 1
+  gamePaused: 0
   winStage: 5
   winScreen:
     m_Handle: 0
+  expThresholds: 640000002c010000f4010000
+  chains: []
+  player: {fileID: 0}
 --- !u!114 &4923543486816692300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +65,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bd2be041c278e408358fd255597ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 6775401246816285680}
+  enemies: {fileID: 0}
   spawnableEnemies: []
   enemyWeights: 
+  wave1: []
+  spawnOffset: 0
+  zOffset: 0
+  timeBetweenWaves: 10
+  timeTillNextWave: 0
   waveWeights: 0
