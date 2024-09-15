@@ -55,14 +55,6 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    public void StopBGM(){
-        this.audioSource.Stop();
-    }
-
-    public void StopBGM(){
-        this.audioSource.Stop();
-    }
-
     public void ChangeVolume(float volume, VolumeType volumeType) {
         if (volume > 1) {
             return;
