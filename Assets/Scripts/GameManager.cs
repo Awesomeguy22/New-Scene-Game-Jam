@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int[] expThresholds = {};
 
     [SerializeField] GameObject[] chains;
+    [SerializeField] GameObject[] brokenChains;
 
     [SerializeField] Player player;    
     
@@ -84,7 +85,9 @@ public class GameManager : MonoBehaviour
         if (i > 3) {
             return;
         }
+        
         chains[i - 1].SetActive(false);
+        brokenChains[i - 1].SetActive(true);
         audioManager.PlayAudioClip(AudioManager.ClipName.chainBreak);
         this.ChainBreak?.Invoke(this, new ChainBreakEventArgs { tentacle = i + 1 });
     }
