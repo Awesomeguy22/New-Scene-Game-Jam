@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         this.audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         this.audioSources[0].volume = masterVolume * bgmVolume;
+        this.audioSources[1].volume = masterVolume * effectsVolume;
+        
     }
 
     private void Start() {

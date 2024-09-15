@@ -687,6 +687,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4a91d83d067452da92e62f04aaabe2, type: 3}
+--- !u!1 &326428077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2524387730988223730, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+  m_PrefabInstance: {fileID: 4815789364646678657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &379293675
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +784,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416011423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7252784349831896279, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+  m_PrefabInstance: {fileID: 4815789364646678657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &429223218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1377,6 +1387,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6f105d42258ad44296ff960ec2d9e8c, type: 3}
   m_PrefabInstance: {fileID: 713826995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &776120772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478717951634163419, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+  m_PrefabInstance: {fileID: 4815789364646678657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &778661862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,6 +1733,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d34e7a4d589ff4480fa63a2c27598d, type: 3}
+--- !u!1 &1226794897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 787085317811620332, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+  m_PrefabInstance: {fileID: 4815789364646678657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309172824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3867,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 19b70337a5ec148a09d6509acfdaacaf, type: 3}
   - {fileID: 8300000, guid: 2a4a697182c514d438226013c9af1f84, type: 3}
   - {fileID: 8300000, guid: e0ae9050b43e0cb439d74bf30b837a8f, type: 3}
-  masterVolume: 1
+  - {fileID: 8300000, guid: 136d75ec30ddaef4c9fecb9d6b7eb1e1, type: 3}
+  masterVolume: 0
   bgmVolume: 0.283
   effectsVolume: 1
 --- !u!1 &473165096610934206
@@ -5885,6 +5906,14 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 218436252207922754, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: attackEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 787085317811620332, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162836694272671034, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: type
       value: 2
@@ -5897,6 +5926,26 @@ PrefabInstance:
       propertyPath: explosionTimer
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 326428077}
+    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 1226794897}
+    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 416011423}
+    - target: {fileID: 3035108755196832772, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 776120772}
     - target: {fileID: 4050551735400314440, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07
@@ -5937,6 +5986,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4551702703844864437, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacleIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5509077500009606092, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: type
       value: 1
@@ -5949,6 +6002,14 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 6657445395478311956, guid: 510d6cecb4195b643bb0734492ab1d89, type: 3}
+    - target: {fileID: 5864175323703403662, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacleIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767326197105060793, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: tentacleIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8684515449956589968, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: tentacleIndex
       value: 1
@@ -5956,6 +6017,10 @@ PrefabInstance:
     - target: {fileID: 8727113643360918967, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951769722329604402, guid: a200d22c76bbc48f09504ea697765c59, type: 3}
+      propertyPath: attackEnabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

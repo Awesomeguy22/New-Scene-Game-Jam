@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
 
 
     public event EventHandler Pause;
+    public event EventHandler<ChainBreakEventArgs> ChainBreak;
+
+    public class ChainBreakEventArgs: EventArgs {
+        public int tentacle;
+    }
 
     private void Awake() {
         this.controlsManager = FindObjectOfType<ControlsManager>();
@@ -70,8 +75,10 @@ public class GameManager : MonoBehaviour
     }
 
     void BreakChain(int i){
+        Debug.Log("Break chain" + (i + 1));
         chains[i].SetActive(false);
         audioManager.PlayAudioClip(AudioManager.ClipName.chainBreak);
+        this.ChainBreak?.Invoke(this, new ChainBreakEventArgs { tentacle = i + 1 });
     }
 
     public void StartGame() {
