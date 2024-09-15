@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     // enter audio clip name to use when calling clip, order has to be the same as the order in audioFiles
     public enum ClipName {
         bgm,
+        intro,
+        projectileHit,
     }
 
     private void Awake() {
@@ -24,7 +26,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Start() {
-        PlayBGM(ClipName.bgm);
+        PlayBGM(ClipName.intro);
     }
     
     public void PlayAudioClip(ClipName clip) {
@@ -32,7 +34,6 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayBGM(ClipName clip) {
-        Debug.Log("played");
         this.audioSource.clip = audioFiles[(int)clip];
         this.audioSource.loop = true;
         this.audioSource.Play();

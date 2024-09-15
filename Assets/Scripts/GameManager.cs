@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //int from 1-4 representing the phase of the game
     //Used by spawner and attack logic
     public int currentGameStage = 1;
-    public bool gamePaused = false;
+    public bool gamePaused = true;
 
     [SerializeField] int winStage = 5;
     [SerializeField] Scene winScreen;
@@ -20,12 +20,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player player;    
     
     private ControlsManager controlsManager;
+    private AudioManager audioManager;
 
 
     public event EventHandler Pause;
 
     private void Awake() {
         this.controlsManager = FindObjectOfType<ControlsManager>();
+        this.audioManager = FindObjectOfType<AudioManager>();
+
+        Time.timeScale = 0;
     }
 
     private void OnEnable() {
@@ -64,6 +68,15 @@ public class GameManager : MonoBehaviour
     void BreakChain(int i){
         
     }
+
+    public void StartGame() {
+        this.gamePaused = false;
+        Time.timeScale = 1;
+
+        this.audioManager.PlayBGM(AudioManager.ClipName.bgm);
+
+        this.Pause?.Invoke(this, EventArgs.Empty);
+    }
     public void RestartGame() {
         Debug.Log("You Lost, Restarting Current Scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -84,5 +97,6 @@ public class GameManager : MonoBehaviour
 
         this.Pause?.Invoke(this, EventArgs.Empty);
     }
+
 
 }
