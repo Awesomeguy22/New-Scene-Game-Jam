@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     private AudioClip[] audioFiles;
+    [SerializeField]
+    [Range(0, 1)]
+    private float volume = 1;
 
     private AudioSource audioSource;
 
@@ -17,6 +20,7 @@ public class AudioManager : MonoBehaviour
     private void Awake() {
         DontDestroyOnLoad(gameObject);
         this.audioSource = FindObjectOfType<AudioSource>();
+        this.audioSource.volume = volume;
     }
 
     private void Start() {
@@ -32,5 +36,17 @@ public class AudioManager : MonoBehaviour
         this.audioSource.loop = true;
         this.audioSource.Play();
         
+    }
+
+    public void ChangeVolume(float volume) {
+        if (volume > 1) {
+            return;
+        }
+
+        this.audioSource.volume = volume;
+    }
+
+    public float GetVolume() {
+        return this.audioSource.volume;
     }
 }

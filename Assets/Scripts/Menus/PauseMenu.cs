@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 
 public class PauseMenu : MonoBehaviour
@@ -10,16 +10,25 @@ public class PauseMenu : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject settingsMenu;
+    [SerializeField]
+    private Button resumeButton;
+    [SerializeField]
+    private Button settingsButton;
+    [SerializeField]
+    private Button exitButton;
 
     private GameManager gameManager;
 
     private void Awake() {
         this.gameManager = FindObjectOfType<GameManager>();
-
     }
 
     private void OnEnable() {
         this.gameManager.Pause += When_Pause;
+
+        this.resumeButton.onClick.AddListener(() => { Resume(); });
+        this.settingsButton.onClick.AddListener(() => { OpenSettings(); });
+
     }
 
     private void OnDisable() {

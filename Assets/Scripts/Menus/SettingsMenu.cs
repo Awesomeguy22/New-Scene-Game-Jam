@@ -2,12 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
 
     [SerializeField]
     private GameObject settingsMenu;
+    [SerializeField]
+    private Button exitButton;
+    [SerializeField]
+    private Button videoButton;
+    [SerializeField]
+    private Button controlsButton;
+    [SerializeField]
+    private Button audioButton;
+
 
     private GameManager gameManager;
 
@@ -17,6 +27,7 @@ public class SettingsMenu : MonoBehaviour
 
     private void OnEnable() {
         this.gameManager.Pause += When_Pause;
+
     }
 
     private void OnDisable() {
@@ -30,4 +41,5 @@ public class SettingsMenu : MonoBehaviour
     public void Exit() {
         this.settingsMenu.SetActive(false);
     }
+
 }
