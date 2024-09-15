@@ -2753,6 +2753,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsMenu: {fileID: 1959193050}
+  exitButton: {fileID: 0}
+  videoButton: {fileID: 0}
+  controlsButton: {fileID: 0}
+  audioButton: {fileID: 0}
 --- !u!1 &1423883053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,8 +4206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115000924632042e4b378735eea4ab93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolume: {fileID: 0}
-  button: {fileID: 0}
+  masterVolume: {fileID: 1580528244}
+  bgmVolume: {fileID: 628969848}
 --- !u!1 &2028605444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4670,6 @@ SceneRoots:
   - {fileID: 290406750}
   - {fileID: 1520267390}
   - {fileID: 628095277}
-  - {fileID: 406988333}
   - {fileID: 631673860}
   - {fileID: 1220414647}
   - {fileID: 7904432536539440675}
