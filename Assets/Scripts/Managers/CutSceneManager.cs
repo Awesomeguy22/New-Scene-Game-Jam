@@ -16,7 +16,7 @@ public class CutSceneManager : MonoBehaviour
     //[SerializeField] String mainSceneName;
 
     //start index is self
-    int frameIndex = 1;
+    int frameIndex = 0;
     //[SerializeField] float timeBetweenFrames = 5.0f;
     //[SerializeField] float timeSinceLastFrame = 0.0f;                                                                                                              
 
@@ -39,12 +39,14 @@ public class CutSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cutsceneFrames = transform.GetComponentsInChildren<Transform>();
-        
-        for (int i = 1; i < cutsceneFrames.Length; i++) {
-            cutsceneFrames[i].gameObject.GetComponent<MeshRenderer>().enabled = false;
+        if (cutsceneFrames.Length == 0){
+            cutsceneFrames = transform.GetComponentsInChildren<Transform>();
         }
-        cutsceneFrames[1].gameObject.GetComponent<MeshRenderer>().enabled = true;
+        
+        for (int i = 0; i < cutsceneFrames.Length; i++) {
+            cutsceneFrames[i].gameObject.SetActive(false);
+        }
+        cutsceneFrames[0].gameObject.SetActive(true);
 
         //DontDestroyOnLoad(this);
     }
@@ -55,8 +57,8 @@ public class CutSceneManager : MonoBehaviour
         if (frameIndex == cutsceneFrames.Length){
             SceneManager.LoadScene(mainSceneName);
         } else{
-            cutsceneFrames[frameIndex - 1].gameObject.GetComponent<MeshRenderer>().enabled = false;
-            cutsceneFrames[frameIndex].gameObject.GetComponent<MeshRenderer>().enabled = true;
+            cutsceneFrames[frameIndex - 1].gameObject.SetActive(false);
+            cutsceneFrames[frameIndex].gameObject.SetActive(true);
         }
     }
 
