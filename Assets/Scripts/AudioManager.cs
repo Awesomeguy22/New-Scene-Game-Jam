@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayBGM(ClipName clip) {
+        Debug.Log("played");
         this.audioSource.clip = audioFiles[(int)clip];
         this.audioSource.loop = true;
         this.audioSource.Play();
