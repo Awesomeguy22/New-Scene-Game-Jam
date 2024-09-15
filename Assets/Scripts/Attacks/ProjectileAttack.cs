@@ -2,39 +2,46 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.Video;
+using Unity.VisualScripting;
 
-public class ProjectileAttack : MonoBehaviour
+public class ProjectileAttack : BaseAttack
 {
-    // Start is called before the first frame update
+    // the projectile prefab to instantialize
     [SerializeField]
     private Projectile projectile;
-    private ControlsManager controlsManager;
-
-
+    [SerializeField]
+    private Vector2 startingCoordinates;
     [SerializeField]
     private int projectileDamege;
+    [SerializeField]
+    private string attackName;
+    // private ControlsManager controlsManager;
+    // private GameManager gameManager;
 
-    private void Awake() {
-        this.controlsManager = FindAnyObjectByType<ControlsManager>();
-    }
+    private int currentTentacle = 1;
 
-    private void OnEnable() {
-        // this.controlsManager = ControlsManager.Singleton;
-        this.controlsManager.ShootProjectile += When_OnShootProjectile;
-    }
+    // the 4 end points of the tentacle
+    private Vector2[] tentacleEnds = { new Vector2(-1.79f, 3.14f), new Vector2(2.12f, 2.19f), new Vector2(0.91f, -0.81f), new Vector2(-1.01f, -2.53f) };
 
 
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+    // private void Awake() {
+    //     this.controlsManager = FindObjectOfType<ControlsManager>();
+    //     this.gameManager = FindObjectOfType<GameManager>();
+    // }
 
-    }
+    // private void OnEnable() {
+    //     this.controlsManager = ControlsManager.Singleton;
+    //     this.controlsManager.ShootProjectile += When_OnShootProjectile;
+    //     this.controlsManager.ToggleTentacle += When_ToggleTentacle;
+    // }
 
-    private void ShootProjectile(Vector2 startingCoordinates) {
+    public override void Attack() {
+        if (CheckCooldown()) {
+            return;
+        }
+
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
 
@@ -43,10 +50,22 @@ public class ProjectileAttack : MonoBehaviour
 
         Projectile projectileInstance = Instantiate(projectile, instantiateCoordinates, Quaternion.identity);
         projectileInstance.Setup(shootingVector, this.projectileDamege);
-    }
 
-    private void When_OnShootProjectile(object sender, EventArgs e) {
-        Vector2 vector = new Vector2(0, 0);
-        ShootProjectile(vector);
     }
+    // function to shoot projectiles, shoots from the starting coordinates to the mouse coordinates
+
+    // private void When_OnShootProjectile(object sender, EventArgs e) {
+    //     if (this.gameManager.gamePaused) {
+    //         return;
+    //     }
+    //     ShootProjectile(tentacleEnds[currentTentacle - 1]);
+    // }
+
+    // change the current active tentacle
+    // private void When_ToggleTentacle(object sender, ControlsManager.ToggleTentacleEventArgs e) {    
+    //     if (this.gameManager.gamePaused) {
+    //         return;
+    //     }
+    //     this.currentTentacle = e.tentacle;
+    // }
 }

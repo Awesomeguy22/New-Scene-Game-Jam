@@ -35,6 +35,69 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Attack1"",
+                    ""type"": ""Button"",
+                    ""id"": ""84e1940a-9886-42dd-845a-2de02cfd5cef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack2"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee82bc00-e9ea-4369-ba94-87d3f02cca5e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack3"",
+                    ""type"": ""Button"",
+                    ""id"": ""f4171419-cb82-4f00-a47f-f5b88ffd31ef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack4"",
+                    ""type"": ""Button"",
+                    ""id"": ""36150358-87f3-4ff3-b861-d843db582000"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fed0681-6404-47d2-bf98-1e029f239d30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""eba36a56-00d7-4aba-a1f5-23cf111b3b4c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""df7d52cc-5c94-49f0-bb47-5f3106c9e36a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -59,6 +122,83 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""ShootProjectile"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39b52624-7ee8-476f-9cdf-1559a9ed07d7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97f6e591-91ca-411d-b66f-d7dbba852770"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b84881eb-bbbf-43db-b036-d7037b908591"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e99fd67-1584-4a26-9f24-b9835af7a122"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1a982da-7ab8-4698-9c15-c29a8f628102"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18951a8c-b76f-440f-8b38-ca680c3986bf"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4386a66e-0bd9-4f38-815b-215b80ccd3cf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -68,6 +208,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Keyboard
         m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
         m_Keyboard_ShootProjectile = m_Keyboard.FindAction("ShootProjectile", throwIfNotFound: true);
+        m_Keyboard_Attack1 = m_Keyboard.FindAction("Attack1", throwIfNotFound: true);
+        m_Keyboard_Attack2 = m_Keyboard.FindAction("Attack2", throwIfNotFound: true);
+        m_Keyboard_Attack3 = m_Keyboard.FindAction("Attack3", throwIfNotFound: true);
+        m_Keyboard_Attack4 = m_Keyboard.FindAction("Attack4", throwIfNotFound: true);
+        m_Keyboard_Pause = m_Keyboard.FindAction("Pause", throwIfNotFound: true);
+        m_Keyboard_Attack = m_Keyboard.FindAction("Attack", throwIfNotFound: true);
+        m_Keyboard_Continue = m_Keyboard.FindAction("Continue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,11 +277,25 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Keyboard;
     private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
     private readonly InputAction m_Keyboard_ShootProjectile;
+    private readonly InputAction m_Keyboard_Attack1;
+    private readonly InputAction m_Keyboard_Attack2;
+    private readonly InputAction m_Keyboard_Attack3;
+    private readonly InputAction m_Keyboard_Attack4;
+    private readonly InputAction m_Keyboard_Pause;
+    private readonly InputAction m_Keyboard_Attack;
+    private readonly InputAction m_Keyboard_Continue;
     public struct KeyboardActions
     {
         private @Controls m_Wrapper;
         public KeyboardActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ShootProjectile => m_Wrapper.m_Keyboard_ShootProjectile;
+        public InputAction @Attack1 => m_Wrapper.m_Keyboard_Attack1;
+        public InputAction @Attack2 => m_Wrapper.m_Keyboard_Attack2;
+        public InputAction @Attack3 => m_Wrapper.m_Keyboard_Attack3;
+        public InputAction @Attack4 => m_Wrapper.m_Keyboard_Attack4;
+        public InputAction @Pause => m_Wrapper.m_Keyboard_Pause;
+        public InputAction @Attack => m_Wrapper.m_Keyboard_Attack;
+        public InputAction @Continue => m_Wrapper.m_Keyboard_Continue;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -147,6 +308,27 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started += instance.OnShootProjectile;
             @ShootProjectile.performed += instance.OnShootProjectile;
             @ShootProjectile.canceled += instance.OnShootProjectile;
+            @Attack1.started += instance.OnAttack1;
+            @Attack1.performed += instance.OnAttack1;
+            @Attack1.canceled += instance.OnAttack1;
+            @Attack2.started += instance.OnAttack2;
+            @Attack2.performed += instance.OnAttack2;
+            @Attack2.canceled += instance.OnAttack2;
+            @Attack3.started += instance.OnAttack3;
+            @Attack3.performed += instance.OnAttack3;
+            @Attack3.canceled += instance.OnAttack3;
+            @Attack4.started += instance.OnAttack4;
+            @Attack4.performed += instance.OnAttack4;
+            @Attack4.canceled += instance.OnAttack4;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
         }
 
         private void UnregisterCallbacks(IKeyboardActions instance)
@@ -154,6 +336,27 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootProjectile.started -= instance.OnShootProjectile;
             @ShootProjectile.performed -= instance.OnShootProjectile;
             @ShootProjectile.canceled -= instance.OnShootProjectile;
+            @Attack1.started -= instance.OnAttack1;
+            @Attack1.performed -= instance.OnAttack1;
+            @Attack1.canceled -= instance.OnAttack1;
+            @Attack2.started -= instance.OnAttack2;
+            @Attack2.performed -= instance.OnAttack2;
+            @Attack2.canceled -= instance.OnAttack2;
+            @Attack3.started -= instance.OnAttack3;
+            @Attack3.performed -= instance.OnAttack3;
+            @Attack3.canceled -= instance.OnAttack3;
+            @Attack4.started -= instance.OnAttack4;
+            @Attack4.performed -= instance.OnAttack4;
+            @Attack4.canceled -= instance.OnAttack4;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
         }
 
         public void RemoveCallbacks(IKeyboardActions instance)
@@ -174,5 +377,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IKeyboardActions
     {
         void OnShootProjectile(InputAction.CallbackContext context);
+        void OnAttack1(InputAction.CallbackContext context);
+        void OnAttack2(InputAction.CallbackContext context);
+        void OnAttack3(InputAction.CallbackContext context);
+        void OnAttack4(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
     }
 }

@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public float playerXP = 0;
 
     [SerializeField] Slider slider;
+
+    private bool showDebug = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +22,12 @@ public class Player : MonoBehaviour
         if (gameManager == null){
             gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         }
-        if (slider){
-            slider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
+        if (!slider){
+            GameObject healthbar = GameObject.FindGameObjectWithTag("Health Bar");
+            if (healthbar){
+                //Debug.Log("found health bar");
+                slider = GameObject.FindGameObjectWithTag("Health Bar").GetComponent<Slider>();
+            }
         }
     }
 
@@ -38,8 +45,10 @@ public class Player : MonoBehaviour
     }
     public void DamagePlayer(float damage){
         playerHealth -= damage;
-        
-        //Debug.Log($"Player taking Damage! Health is now {playerHealth}");
+        CheckDeath();
+        if (showDebug) {
+            Debug.Log($"Player taking Damage! Health is now {playerHealth}");
+        }
     }
 
     public void GainXP(float xp) {
@@ -50,7 +59,6 @@ public class Player : MonoBehaviour
 
 
     void CheckDeath() {
-
         if (playerHealth < 0){
             gameManager.RestartGame();
         }

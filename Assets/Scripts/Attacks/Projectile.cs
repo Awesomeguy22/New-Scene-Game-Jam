@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
 
@@ -10,21 +11,16 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     ProjectileAttack attack;
     private Rigidbody rigidbody;
+    private AudioManager audioManager;
 
-    private int damage;
+    private float damage;
 
-    void Start()
-    {
- 
-    }
+    private bool showDebug = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    // setup the velocity, duration and damage of the projectile 
     public void Setup(Vector2 direction, int damage) {
         this.rigidbody = this.GetComponent<Rigidbody>();
+        this.audioManager = FindObjectOfType<AudioManager>();
 
         this.rigidbody.velocity = new Vector3(direction.x, direction.y, 0) * 10;
         this.damage = damage;
@@ -33,17 +29,16 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
+    // projectile collision detect
     private void OnTriggerEnter(Collider collision) {
-        Debug.Log(collision.gameObject.name);
+        if (showDebug) {
+            Debug.Log(collision.gameObject.name);
+        }
         
-
         if (collision.gameObject.tag == "Enemy") {
-            Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-            enemy.takeDamage(damage);
+            collision.gameObject.GetComponentInParent<Enemy>().takeDamage(this.damage);
+            audioManager.PlayAudioClip(AudioManager.ClipName.projectileHit);
             Destroy(gameObject);
         }
-
-
-
     }
 }

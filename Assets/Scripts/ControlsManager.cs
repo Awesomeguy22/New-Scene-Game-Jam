@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using System.Data;
+using UnityEngine.Rendering;
 
 public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
 {
@@ -10,8 +12,14 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public Controls controls;
     
     public event EventHandler ShootProjectile;
+    public event EventHandler<ToggleAttackEventArgs> ToggleAttack;
+    public event EventHandler Pause;
+    public event EventHandler Attack;
 
-
+    public event EventHandler Continue;
+    public class ToggleAttackEventArgs: EventArgs {
+        public int attack;
+    }
 
     private void OnEnable(){
         controls.Keyboard.Enable();
@@ -62,6 +70,48 @@ public class ControlsManager : MonoBehaviour, Controls.IKeyboardActions
     public void OnShootProjectile(InputAction.CallbackContext context) {
         if (context.phase == InputActionPhase.Performed) {
             ShootProjectile?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void OnAttack1(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 1 });
+        }
+    }
+
+    public void OnAttack2(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 2 });
+        }
+    }
+
+    public void OnAttack3(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 3 });
+        }
+    }
+
+    public void OnAttack4(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            ToggleAttack?.Invoke(this, new ToggleAttackEventArgs { attack = 4 });
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Pause?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Attack?.Invoke(this, EventArgs.Empty);        
+        }
+    }
+
+    public void OnContinue(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed) {
+            Continue?.Invoke(this, EventArgs.Empty);        
         }
     }
 }
