@@ -63,6 +63,14 @@ public class GameManager : MonoBehaviour
 
 
     public void CheckGamePhase(float playerXP) {
+        Debug.Log("Current stage: " + currentGameStage);
+        
+        if (currentGameStage == winStage){
+            Debug.Log("win");
+            Win();
+            return;
+        }
+
         if (playerXP > expThresholds[currentGameStage - 1]) {
             currentGameStage += 1;
             player.playerHealth = player.maxHealth;
@@ -70,14 +78,13 @@ public class GameManager : MonoBehaviour
             BreakChain(currentGameStage - 1);
         }
 
-        if (currentGameStage == winStage){
-            Win();
-        }
     }
 
     void BreakChain(int i){
-        Debug.Log("Break chain" + (i + 1));
-        chains[i].SetActive(false);
+        if (i > 3) {
+            return;
+        }
+        chains[i - 1].SetActive(false);
         audioManager.PlayAudioClip(AudioManager.ClipName.chainBreak);
         this.ChainBreak?.Invoke(this, new ChainBreakEventArgs { tentacle = i + 1 });
     }

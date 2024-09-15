@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject settingsMenu;
     [SerializeField]
+    private GameObject startMenu;
+    [SerializeField]
     private Button resumeButton;
     [SerializeField]
     private Button settingsButton;
@@ -24,6 +26,7 @@ public class PauseMenu : MonoBehaviour
 
         this.resumeButton.onClick.AddListener(() => { Resume(); });
         this.settingsButton.onClick.AddListener(() => { OpenSettings(); });
+        this.exitButton.onClick.AddListener(() => { Exit(); });
     }
 
     private void OnEnable() {
@@ -50,5 +53,10 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenSettings() {
         this.settingsMenu.SetActive(true);
+    }
+
+    private void Exit() {
+        this.startMenu.SetActive(true);               
+        this.pauseMenu.SetActive(false);
     }
 }

@@ -52,7 +52,7 @@ MonoBehaviour:
   winStage: 5
   winScreen:
     m_Handle: 0
-  expThresholds: 640000002c010000f4010000
+  expThresholds: 0a0000001e0000003200000064000000
   chains:
   - {fileID: 7056927849470086281}
   - {fileID: 7081580243307411945}
