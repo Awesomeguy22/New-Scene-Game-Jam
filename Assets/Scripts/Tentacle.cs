@@ -43,7 +43,7 @@ public class Tentacle : MonoBehaviour
     }
 
     // calculate angle in degrees from vector 2
-    private float Vector2Deg(Vector2 vector) {
+    public static float Vector2Deg(Vector2 vector) {
         float angle = Mathf.Atan(vector.y / vector.x) * Mathf.Rad2Deg;
 
         if (vector.x < 0 && vector.y > 0) {

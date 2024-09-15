@@ -12,7 +12,7 @@ public class ProjectileAttack : BaseAttack
     private Projectile projectile;
     [SerializeField]
     private Explosion explosion;
-    [SerializeField]
+    // [SerializeField]
     private Vector2 startingCoordinates;
     [SerializeField]
     private int projectileDamege;
@@ -24,6 +24,8 @@ public class ProjectileAttack : BaseAttack
     private float explosionSize;
     [SerializeField]
     private float explosionTimer;
+    [SerializeField]
+    private float tentacleDistance;
     // private ControlsManager controlsManager;
     // private GameManager gameManager;
 
@@ -50,7 +52,12 @@ public class ProjectileAttack : BaseAttack
             return;
         }
 
+
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        float mouseAngle = Tentacle.Vector2Deg(mouseCoordinates);
+
+         
+        startingCoordinates = new Vector2(tentacleDistance * Mathf.Cos(mouseAngle * Mathf.Deg2Rad), tentacleDistance * Mathf.Sin(mouseAngle * Mathf.Deg2Rad));
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
 
         Vector3 instantiateCoordinates = new Vector3(startingCoordinates.x, startingCoordinates.y, -3);
