@@ -9,17 +9,24 @@ public class StartMenu : MonoBehaviour
     private GameObject startMenu;
     [SerializeField]
     private Button startButton;
+    [SerializeField]
+    private Button creditsButton;
 
     private GameManager gameManager;
 
     private void Awake() {
         this.gameManager = FindObjectOfType<GameManager>();
         this.startButton.onClick.AddListener(() => { StartGame(); });
+        this.creditsButton.onClick.AddListener(() => { OpenCredits(); });
     }
 
     private void StartGame() {
         this.gameManager.StartGame();
         
         this.startMenu.SetActive(false);
+    }
+
+    private void OpenCredits() {
+
     }
 }

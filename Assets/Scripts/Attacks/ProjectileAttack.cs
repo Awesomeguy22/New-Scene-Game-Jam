@@ -56,9 +56,9 @@ public class ProjectileAttack : BaseAttack
         Vector2 mouseCoordinates = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         float mouseAngle = Tentacle.Vector2Deg(mouseCoordinates);
 
-         
-        startingCoordinates = new Vector2(tentacleDistance * Mathf.Cos(mouseAngle * Mathf.Deg2Rad), tentacleDistance * Mathf.Sin(mouseAngle * Mathf.Deg2Rad));
+        startingCoordinates = new Vector2(0, 0);
         Vector2 shootingVector = (mouseCoordinates - startingCoordinates).normalized;
+        startingCoordinates = new Vector2(tentacleDistance * Mathf.Cos(mouseAngle * Mathf.Deg2Rad), tentacleDistance * Mathf.Sin(mouseAngle * Mathf.Deg2Rad));
 
         Vector3 instantiateCoordinates = new Vector3(startingCoordinates.x, startingCoordinates.y, -3);
 
